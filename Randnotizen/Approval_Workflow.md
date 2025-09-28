@@ -25,8 +25,10 @@ Behörden arbeiten formalisiert und fristgebunden. Jede Zeichnung muss **nachvol
 - [x] Eskalationsketten/Fristen definiert  
 - [x] Stellvertretung integriert (s. Mandate_Management)  
 - [x] UI für Genehmiger & Besteller konzipiert  
-- [x] Audit-Trail & Reporting implementiert  
+- [x] Audit-Trail & Reporting implementiert
 - [x] E2E-Tests/Betragsschwellen/Edge-Cases
+
+> @todo (PO): Akzeptanzkriterien für Freigabefälle (Wenn Order-Level X, Dann Genehmigungsstatus Y innerhalb Z Zeit) ergänzen.
 
 ## Abhängigkeiten/Überschneidungen
 - **Rollen & Rechte:** Wer darf freigeben?  

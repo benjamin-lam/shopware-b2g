@@ -6,6 +6,8 @@ Diese Sammlung bündelt die wichtigsten Problemstellungen und Lösungsansätze i
 ## Allgemeiner Teil
 - [B2G_Besonderheiten](B2G_Besonderheiten.md) – Rechtliches/organisatorisches Umfeld, typische Prozesse, Pflichten.
 - [B2G_Technische_Auswirkungen](B2G_Technische_Auswirkungen.md) – Architektur- und Sicherheitsimplikationen, Standards, Muster.
+> @todo (PO): Beispiel-Skeleton für B2G_Besonderheiten anlegen / Scope abstimmen
+> @todo (PO): Beispiel-Skeleton für B2G_Technische_Auswirkungen anlegen / Scope abstimmen
 
 ## Module (Shopware-spezifische Deep Dives)
 - [Rollen_&_Rechte](Rollen_&_Rechte.md) – Granulare Rollen & Berechtigungen, Unterkonten.
@@ -22,5 +24,9 @@ Diese Sammlung bündelt die wichtigsten Problemstellungen und Lösungsansätze i
 - [Audit_Logging](Audit_Logging.md) – Revisionssichere Protokolle, Scope, Aufbewahrung.
 - [Monitoring_&_Alerting](Monitoring_&_Alerting.md) – Uptime/APM/Logs/Security-Signale, Alarmierung, Berichte.
 - [DrBackup_&_Wiederherstellung](DrBackup_&_Wiederherstellung.md) – Backup/Restore, RPO/RTO, DR-Playbooks, Verschlüsselung.
+> @todo (PO): Beispiel-Skeleton für Betrieb & Governance anlegen / Scope abstimmen
+> @todo (PO): Beispiel-Skeleton für Change & Release anlegen / Scope abstimmen
+> @todo (PO): Beispiel-Skeleton für Dokumentation & Archivierung anlegen / Scope abstimmen
+> @todo (PO): Beispiel-Skeleton für Testing & Abnahme anlegen / Scope abstimmen
 
 > Hinweis: Inhalte sind **kundengenerisch** formuliert (keine Namen). Jede Seite enthält: *Kundenanforderung*, *Warum (Kontext)*, *B2G-Besonderheiten*, *Was fehlt OOTB*, *Technische Umsetzung (Allgemein)*, *Spezifisch für Shopware*, *Abhängigkeiten/Überschneidungen*, *Checkliste*.

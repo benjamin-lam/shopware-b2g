@@ -19,9 +19,11 @@ Anbindung an e-Procurement-Systeme (z. B. SAP SRM/Ariba, Jaggaer, Coupa): **Punc
 - [x] Standards/Partneranforderungen abgestimmt  
 - [x] Setup-Flows/Sessionmanagement implementiert  
 - [x] Katalogeinschränkung/Preise je Mandant [23]  
-- [x] Warenkorb-Transfer (OCI/cXML)  
-- [x] Fehlerfälle & Wiederholungen  
+- [x] Warenkorb-Transfer (OCI/cXML)
+- [x] Fehlerfälle & Wiederholungen
 - [x] Partner-Doku & E2E-Tests
+
+> @todo (PO): Akzeptanzkriterien für Punchout/Katalog (z. B. erfolgreiche OCI-Rückgabe, cXML-Validierung) festlegen.
 
 ## Abhängigkeiten/Überschneidungen
 - **ERP-Schnittstellen:** Preis-/Stammdatenquelle, Orderimport.  

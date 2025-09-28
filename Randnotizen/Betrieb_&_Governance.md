@@ -19,9 +19,12 @@ Klar definierte Verantwortlichkeiten und Prozesse für Betrieb, Monitoring, Eska
 ## Checkliste
 - [x] Runbooks erstellt & getestet  
 - [x] Eskalationsketten definiert  
-- [x] Bereitschaftsdienst organisiert  
-- [x] Betriebshandbuch gepflegt  
+- [x] Bereitschaftsdienst organisiert
+- [x] Betriebshandbuch gepflegt
 - [x] Governance-Richtlinien umgesetzt
+
+> @todo (PO): Akzeptanzkriterien für Betriebsprozesse (z. B. maximale Reaktionszeit, Nachweis der Runbook-Übung) beschreiben.
+> @todo (PO): Abhängigkeiten zu Monitoring, Backup und Change-Management ergänzen.
 
 ## Quellen
 [4][13]

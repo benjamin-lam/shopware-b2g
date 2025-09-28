@@ -20,9 +20,12 @@ Alle relevanten Unterlagen, Nachweise und Protokolle rechts- und revisionssicher
 - [x] Vergabedokumentation vollständig  
 - [x] Betriebs- und Änderungsdokumentation gepflegt  
 - [x] Audit-Trails gesichert/archiviert  
-- [x] Rechnungsdaten revisionssicher gespeichert  
-- [x] A11y-Nachweise abgelegt  
+- [x] Rechnungsdaten revisionssicher gespeichert
+- [x] A11y-Nachweise abgelegt
 - [x] Archivierungspflichten überprüft
+
+> @todo (PO): Akzeptanzkriterien für Dokumentations-/Archivierungsnachweise definieren (z. B. Vollständigkeits- und Aufbewahrungsprüfungen).
+> @todo (PO): Abhängigkeiten zu Audit-Logging, Change-Management und Invoicing sichtbar machen.
 
 ## Quellen
 [2][3][4][7][8][18]

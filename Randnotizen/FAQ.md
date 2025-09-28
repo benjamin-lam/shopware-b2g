@@ -23,6 +23,8 @@
 - Logging: Event „ORDER_APPROVED“ inkl. Benutzer/Rolle
 
 ## Wer trägt Verantwortung für DR/Backup?
-- Betriebsteam legt RTO/RPO fest  
-- Regelmäßige Restore-Tests dokumentieren  
+- Betriebsteam legt RTO/RPO fest
+- Regelmäßige Restore-Tests dokumentieren
 - Ergebnisse im Notfallhandbuch ablegen
+
+> @todo (PO): Akzeptanzkriterien/Checkliste für FAQ-Abdeckung definieren (Welche Themen müssen beantwortet werden?).

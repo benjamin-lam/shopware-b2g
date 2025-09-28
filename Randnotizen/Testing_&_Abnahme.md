@@ -20,9 +20,12 @@ Sicherstellen, dass alle B2G-spezifischen Funktionen (z. B. Punchout, XRechnung,
 - [x] Testplan erstellt  
 - [x] Automatisierte Tests (CI/CD) eingerichtet  
 - [x] Fachliche Abnahme dokumentiert  
-- [x] Schnittstellen-Endpunkte mit Partnern getestet  
-- [x] Validierung XRechnung erfolgreich  
+- [x] Schnittstellen-Endpunkte mit Partnern getestet
+- [x] Validierung XRechnung erfolgreich
 - [x] A11y-Tests (WCAG/BITV) durchgeführt
+
+> @todo (PO): Akzeptanzkriterien für Abnahmen (z. B. minimaler Testumfang, Nachweisformate) definieren.
+> @todo (PO): Abhängigkeiten zu Change/Betrieb/Monitoring dokumentieren.
 
 ## Quellen
 [3][7][8][15][16][18][22][24]

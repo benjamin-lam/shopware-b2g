@@ -13,13 +13,15 @@ Zuordnung von Bestellungen zu **Kostenstellen** (Pflicht) mit **Budgetprüfung**
 ## Checkliste
 - [x] Import/Mapping + Admin-UI  
 - [x] Pflichtauswahl & Validierung  
-- [x] Abzugslogik & Storno-Gutschrift  
-- [x] Reports/Exporte  
+- [x] Abzugslogik & Storno-Gutschrift
+- [x] Reports/Exporte
 - [x] ERP-Roundtrip getestet
 
 ## Abhängigkeiten/Überschneidungen
-- **Approval:** Überschreitung → Freigabestufe.  
+- **Approval:** Überschreitung → Freigabestufe.
 - **Rollen:** Wer darf Budgets pflegen/sehen?
+
+> @todo (PO): Akzeptanzkriterien für Budgetprüfungen (Fehlerfälle, Schwellenwerte, Reporting) festlegen.
 
 ## Quellen
 [10]

@@ -20,8 +20,11 @@
 - [x] Risikoanalyse durchgeführt  
 - [x] Tests in Staging erfolgreich  
 - [x] Abnahme dokumentiert  
-- [x] Rollback-Szenario getestet  
+- [x] Rollback-Szenario getestet
 - [x] Release in Change-Log dokumentiert
+
+> @todo (PO): Akzeptanzkriterien für Releases (wann gilt ein Change als abgenommen, welche KPIs) definieren.
+> @todo (PO): Abhängigkeiten zu Betrieb/Testing/Risikomanagement dokumentieren.
 
 ## Quellen
 [12][18]

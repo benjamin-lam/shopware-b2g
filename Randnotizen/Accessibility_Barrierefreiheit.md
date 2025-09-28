@@ -28,9 +28,11 @@ Der Shop muss für alle Nutzer:innen uneingeschränkt bedienbar sein und **WCAG 
 - [x] WCAG-Audit inkl. manueller Screenreader-Prüfung durchgeführt  
 - [x] Tastaturbedienbarkeit & sichtbarer Fokus sichergestellt  
 - [x] Fehlerhandling mit `aria-live`/Fokus  
-- [x] Barrierefreiheitserklärung + Feedback-Prozess veröffentlicht [28]  
-- [x] Redaktion geschult; Leitfaden dokumentiert  
+- [x] Barrierefreiheitserklärung + Feedback-Prozess veröffentlicht [28]
+- [x] Redaktion geschult; Leitfaden dokumentiert
 - [x] Wiederkehrende Prüfung (manuell + Tooling) in Pipeline verankert
+
+> @todo (PO): Akzeptanzkriterien für Accessibility (Wenn Nutzer:in X, Dann Ergebnis Y, gemessen durch Z) definieren.
 
 ## Abhängigkeiten/Überschneidungen
 - **Theming & Branding:** Kontraste, Fonts, Fokus-Stile.  

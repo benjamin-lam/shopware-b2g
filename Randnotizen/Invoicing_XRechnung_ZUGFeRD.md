@@ -19,13 +19,15 @@ Erzeugung **valider XRechnung (EN 16931)** inkl. **Leitweg-ID** sowie Versand ü
 - [x] Pflichtfelder modelliert & gepflegt  
 - [x] XML-Generator + Validierung integriert  
 - [x] Versandweg definiert & getestet  
-- [x] Archivierung/Backup geregelt  
-- [x] Korrekturprozesse dokumentiert  
+- [x] Archivierung/Backup geregelt
+- [x] Korrekturprozesse dokumentiert
 - [x] ERP-Integration (Felder/Belege) [8][22]
 
 ## Abhängigkeiten/Überschneidungen
-- **ERP:** Belegdaten/Nummernkreise, Versandpfad.  
+- **ERP:** Belegdaten/Nummernkreise, Versandpfad.
 - **Audit:** Nachweise/Versandprotokolle.
+
+> @todo (PO): Akzeptanzkriterien für XRechnung (Validierungsnachweis, PEPPOL-Test, Archivprüfung) ergänzen.
 
 ## Quellen
 [8][9][14][16][17][22]

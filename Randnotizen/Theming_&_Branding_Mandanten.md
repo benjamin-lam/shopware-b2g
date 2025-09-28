@@ -18,14 +18,16 @@ CI-konforme Darstellung (Logo, Farben, Schriften, ggf. Hoheitszeichen) je **Orga
 ## Checkliste (aus Recherche)
 - [x] Channels/Theme-Configs je Organisation  
 - [x] Mandantenspezifische Inhalte (CMS/Impressum)  
-- [x] E-Mails/PDFs angepasst & getestet [11]  
-- [x] Performance/Kompatibilität geprüft  
-- [x] Konsistenz in Custom-Modulen  
+- [x] E-Mails/PDFs angepasst & getestet [11]
+- [x] Performance/Kompatibilität geprüft
+- [x] Konsistenz in Custom-Modulen
 - [x] Admin-Doku/Schulung
 
 ## Abhängigkeiten/Überschneidungen
-- **Accessibility:** Kontraste/Fokus/Typografie.  
+- **Accessibility:** Kontraste/Fokus/Typografie.
 - **Punchout:** Sichtbare Mandantenidentität im Flow.
+
+> @todo (PO): Akzeptanzkriterien für Mandanten-Themes (z. B. Kontrastnachweis, Browserkompatibilität, Mandantenwechsel) ausarbeiten.
 
 ## Quellen
 [7][10][11][13]

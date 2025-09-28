@@ -21,13 +21,15 @@ Mehrbenutzer-Organisationen (Behörden) mit **feingranularen Berechtigungen** f�
 ## Checkliste
 - [x] Rollenmodell & Hierarchien definiert  
 - [x] Datenmodell & Migrationen  
-- [x] Admin-UI & Reports  
-- [x] Policy-Enforcement/Tests  
+- [x] Admin-UI & Reports
+- [x] Policy-Enforcement/Tests
 - [x] SSO-Mapping & Audit
 
 ## Abhängigkeiten/Überschneidungen
-- **Approval/Mandate:** Rechte wirken auf Genehmigungen/Vertretungen.  
+- **Approval/Mandate:** Rechte wirken auf Genehmigungen/Vertretungen.
 - **SSO/IdM:** Attribut-Mapping → Rollen.
+
+> @todo (PO): Akzeptanzkriterien für Rollenvergabe/Rezertifizierung definieren (z. B. Prüfintervalle, Audit-Belege).
 
 ## Quellen
 [15][16][19][21][4]
