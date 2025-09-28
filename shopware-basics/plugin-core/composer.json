@@ -1,0 +1,11 @@
+{
+    "name": "acme/swbasics-plugin",
+    "type": "shopware-platform-plugin",
+    "description": "Skeleton Plugin für Shopware Core Erweiterungen",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Acme\\SwBasics\\PluginCore\\": "src/"
+        }
+    }
+}

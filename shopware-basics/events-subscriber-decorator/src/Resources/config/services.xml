@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Acme\\SwBasics\\EventsSubscriberDecorator\\Subscriber\\CheckoutSubscriber">
+            <argument type="service" id="logger"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Acme\\SwBasics\\EventsSubscriberDecorator\\Decorator\\LineItemServiceDecorator"
+                 decorates="Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemFactoryRegistry"
+                 decoration-priority="-10">
+            <argument type="service" id="Acme\\SwBasics\\EventsSubscriberDecorator\\Decorator\\LineItemServiceDecorator.inner"/>
+        </service>
+    </services>
+</container>

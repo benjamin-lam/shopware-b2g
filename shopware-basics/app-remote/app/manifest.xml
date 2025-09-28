@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>AcmeSwBasicsApp</name>
+        <label>Acme Basics Remote App</label>
+        <version>1.0.0</version>
+        <license>proprietary</license>
+        <author>Acme</author>
+        <copyright>Acme</copyright>
+        <description>Skeleton für eine Remote App Integration.</description>
+    </meta>
+
+    <setup>
+        <registrationUrl>https://remote.example/register</registrationUrl>
+        <secret>[[REMOTE-SECRET]]</secret>
+        <modules>
+            <module name="acme-settings"
+                    source="Resources/administration/main.js"
+                    position="100"/>
+        </modules>
+    </setup>
+
+    <permissions>
+        <read>order:read</read>
+        <read>customer:read</read>
+    </permissions>
+
+    <webhooks>
+        <webhook name="acme-order-created"
+                 url="https://remote.example/webhook/order-created"
+                 event="checkout.order.placed"/>
+    </webhooks>
+</manifest>

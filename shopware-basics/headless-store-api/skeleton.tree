@@ -1,0 +1,8 @@
+```
+headless-store-api/
+├── README.md
+├── OVERVIEW.md
+├── skeleton.tree
+└── examples
+    └── requests.http
+```
