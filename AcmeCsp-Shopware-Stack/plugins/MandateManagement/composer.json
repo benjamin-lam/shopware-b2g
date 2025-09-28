@@ -4,16 +4,16 @@
   "description": "MandateManagement plugin scaffold",
   "license": "proprietary",
   "require": {
-    "php": ">=8.1",
-    "shopware/core": "^6.5"
+    "php": ">=8.2",
+    "shopware/core": "^6.6"
   },
   "autoload": {
     "psr-4": {
-      "Acme\\Csp\\MandateManagement\": "src/"
+      "Acme\\Csp\\MandateManagement\\": "src/"
     }
   },
   "extra": {
-    "shopware-plugin-class": "Acme\\Csp\\MandateManagement\MandateManagement",
+    "shopware-plugin-class": "Acme\\Csp\\MandateManagement\\MandateManagement",
     "label": "MandateManagement (Scaffold)"
   }
 }

@@ -28,12 +28,14 @@ URL: https://e-rechnung-bund.de/behoerden/
 
 [9] Shopware — Monitoring & Health-Checks (kein Link in der Recherche)  
 URL: **TODO**
+> @todo: Recherchierte URL ergänzen (Quelle nachtragen)
 
 [10] Atwix — Shopware B2B (Teil 1/Überblick)  
 URL: https://www.atwix.com/ecommerce/shopware-b2b/
 
 [11] Shopware — Mail-/Dokumenten-Templates & Kompatibilität (kein Link in der Recherche)  
 URL: **TODO**
+> @todo: Recherchierte URL ergänzen (Quelle nachtragen)
 
 [12] GISA — Security Logging & SIEM (gleicher Artikel, Abschnitte)  
 URL: https://www.gisa.de/media-und-events/blog/mindeststandard-2-0-vom-bsi-veroeffentlicht-security-logs-als-pflicht-oder-kuer-fuer-die-cyber-security/
@@ -70,6 +72,7 @@ URL: https://www.atwix.com/ecommerce/shopware-b2b/
 
 [24] Shopware — Import/Export & DAL: Order-Export (kein Link in der Recherche)  
 URL: **TODO**
+> @todo: Recherchierte URL ergänzen (Quelle nachtragen)
 
 [25] Atwix — Shopware 6 B2B features in practice (gleiche Seite/Abschnitte)  
 URL: https://www.atwix.com/ecommerce/shopware-b2b/
@@ -79,6 +82,7 @@ URL: https://www.vektorrausch.de/2025/06/unterschiede-wcag-bitv-bgg-iso301549-bf
 
 [28] Muster „Barrierefreiheitserklärung“ (kein Link in der Recherche)  
 URL: **TODO**
+> @todo: Recherchierte URL ergänzen (Quelle nachtragen)
 
 [29] AccessiWay — BITV 2.0 Hinweise (zusätzliche A11y-Ressource)  
 URL: https://www.accessiway.de/bitv-2-0

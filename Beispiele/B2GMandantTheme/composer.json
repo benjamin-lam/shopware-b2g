@@ -1,7 +1,7 @@
 {
   "name": "b2g/mandant-theme",
   "description": "Skeleton: Mandantenspezifisches Theme für Shopware 6",
-  "type": "shopware-platform-plugin",
+  "type": "shopware-platform-theme",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -16,7 +16,7 @@
     }
   },
   "require": {
-    "php": ">=8.1",
-    "shopware/storefront": "^6.5"
+    "php": ">=8.2",
+    "shopware/storefront": "^6.6"
   }
 }

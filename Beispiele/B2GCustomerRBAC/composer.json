@@ -2,7 +2,15 @@
   "name": "b2g/customer-rbac",
   "description": "Skeleton: Kunden-RBAC/Unterkonten",
   "type": "shopware-platform-plugin",
-  "autoload": { "psr-4": { "B2G\\CustomerRBAC\\": "src/" } },
-  "extra": { "shopware-plugin-class": "B2G\\CustomerRBAC\\B2GCustomerRBAC" },
-  "require": { "php": ">=8.1" }
+  "autoload": {
+    "psr-4": {
+      "B2G\\CustomerRBAC\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "B2G\\CustomerRBAC\\B2GCustomerRBAC"
+  },
+  "require": {
+    "php": ">=8.2"
+  }
 }
