@@ -86,5 +86,3 @@
 
 * **„Out-of-the-box“** (B2B-Suite) deckt Unterkonten/Rollen, einfache Freigaben und Org-Units ab.
 * **Pflicht-Customizing** im B2G: **Audit-Trail, Kostenstellen/Budgets, XRechnung, Punchout, SSO-Mapping, A11y-Härtung, Monitoring/SLAs.**  
-
-Wenn du magst, gieße ich das als **Codex-Mapping** (je Anforderung ein Unterordner inkl. README & Skeleton) – dann hast du sofort die Projektstruktur zum Starten.
