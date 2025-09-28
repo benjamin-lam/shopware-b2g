@@ -1,0 +1,15 @@
+{
+  "name": "acme/csp-stack",
+  "type": "project",
+  "description": "Generic Shopware plugin stack for B2B/Public Sector service-portal use cases.",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Acme\Csp\Shared\": "shared/src/"
+    }
+  }
+}

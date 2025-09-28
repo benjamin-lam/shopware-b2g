@@ -1,0 +1,19 @@
+{
+  "name": "acme/shopware-rolespermissions",
+  "type": "shopware-platform-plugin",
+  "description": "RolesPermissions plugin scaffold",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1",
+    "shopware/core": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Acme\\Csp\\RolesPermissions\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Acme\\Csp\\RolesPermissions\RolesPermissions",
+    "label": "RolesPermissions (Scaffold)"
+  }
+}
