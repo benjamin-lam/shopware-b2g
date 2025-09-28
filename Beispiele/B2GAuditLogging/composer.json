@@ -1,0 +1,8 @@
+{
+  "name": "b2g/audit-logging",
+  "description": "Skeleton: Audit-Trail für B2G",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\AuditLogging\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\AuditLogging\\B2GAuditLogging" },
+  "require": { "php": ">=8.1" }
+}

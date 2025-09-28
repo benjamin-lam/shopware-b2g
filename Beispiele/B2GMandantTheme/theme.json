@@ -1,0 +1,10 @@
+{
+  "name": "B2G Mandant Theme",
+  "author": "B2G",
+  "views": [
+    "@Storefront"
+  ],
+  "style": [
+    "app/storefront/src/scss/base.scss"
+  ]
+}

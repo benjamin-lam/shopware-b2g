@@ -1,0 +1,8 @@
+{
+  "name": "b2g/invoicing-xrechnung",
+  "description": "Skeleton: XRechnung Generator/Validator für B2G",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\InvoicingXRechnung\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\InvoicingXRechnung\\B2GInvoicingXRechnung" },
+  "require": { "php": ">=8.1" }
+}
