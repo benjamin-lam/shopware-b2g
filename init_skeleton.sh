@@ -6,6 +6,22 @@ set -euo pipefail
 VENDOR="${1:-Acme}"
 SUITE="${2:-Csp}"
 
+slugify() {
+  local value
+  value=$(echo "$1" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '_')
+  value=$(echo "$value" | sed 's/^_\+//; s/_\+$//')
+  printf '%s\n' "$value"
+}
+
+VENDOR_SLUG=$(slugify "$VENDOR")
+SUITE_SLUG=$(slugify "$SUITE")
+
+if [[ -n "$SUITE_SLUG" ]]; then
+  STACK_PACKAGE="${VENDOR_SLUG}/${SUITE_SLUG}-stack"
+else
+  STACK_PACKAGE="${VENDOR_SLUG}/${VENDOR_SLUG}-stack"
+fi
+
 ROOT="${VENDOR}${SUITE}-Shopware-Stack"
 MODULES=(
   RolesPermissions
@@ -111,7 +127,7 @@ INNER_EOF
 
 cat > composer.json <<INNER_EOF
 {
-  "name": "$(echo "$VENDOR" | tr '[:upper:]' '[:lower:]')/$(echo "$SUITE" | tr '[:upper:]' '[:lower:]')-stack",
+  "name": "${STACK_PACKAGE}",
   "type": "project",
   "description": "Generic Shopware plugin stack for B2B/Public Sector service-portal use cases.",
   "license": "proprietary",
@@ -218,7 +234,7 @@ scaffold_plugin () {
 
   cat > "${pluginDir}/composer.json" <<INNER_EOF
 {
-  "name": "$(echo "$VENDOR" | tr '[:upper:]' '[:lower:]')/shopware-${module,,}",
+  "name": "${VENDOR_SLUG}/shopware-${module,,}",
   "type": "shopware-platform-plugin",
   "description": "${module} plugin scaffold",
   "license": "proprietary",
@@ -248,9 +264,9 @@ use Shopware\Core\Framework\Plugin\Context\InstallContext;
 
 final class ${module} extends Plugin
 {
-    public function install(InstallContext $installContext): void
+    public function install(InstallContext \$installContext): void
     {
-        parent::install($installContext);
+        parent::install(\$installContext);
         // TODO: migrations, system config, ACL seeds
     }
 }
@@ -326,11 +342,11 @@ use Psr\Log\LoggerInterface;
 
 final class ${module}Facade
 {
-    public function __construct(private readonly LoggerInterface $logger) {}
+    public function __construct(private readonly LoggerInterface \$logger) {}
 
     public function demo(): void
     {
-        $this->logger->info('${module}: scaffold operational');
+        \$this->logger->info('${module}: scaffold operational');
     }
 }
 INNER_EOF
@@ -399,12 +415,17 @@ INNER_EOF
 
 add_costcenter_entity () {
   local pluginDir="plugins/CostCenters"
-  local nsBase="${VENDOR}\${SUITE}\CostCenters"
-  local nsEsc
-  nsEsc="$(to_ns_path "${nsBase}")"
+  local nsBase="${VENDOR}\\${SUITE}\\CostCenters"
+
+  local tablePrefix="${VENDOR_SLUG}"
+  if [[ -n "${SUITE_SLUG}" ]]; then
+    tablePrefix="${tablePrefix}_${SUITE_SLUG}"
+  fi
+
+  local tableName="${tablePrefix}_cost_center"
 
   mkdir -p "${pluginDir}/src/Core/Content/CostCenter"
-  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterDefinition.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterDefinition.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\CostCenter;
@@ -418,7 +439,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
 
 final class CostCenterDefinition extends EntityDefinition
 {
-    public const ENTITY_NAME = 'acme_cost_center';
+    public const ENTITY_NAME = '${tableName}';
 
     public function getEntityName(): string { return self::ENTITY_NAME; }
     public function getEntityClass(): string { return CostCenterEntity::class; }
@@ -433,9 +454,9 @@ final class CostCenterDefinition extends EntityDefinition
         ]);
     }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterEntity.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterEntity.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\CostCenter;
@@ -447,18 +468,18 @@ class CostCenterEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected string $code;
-    protected ?string $name = null;
+    protected string \$code;
+    protected ?string \$name = null;
 
-    public function getCode(): string { return $this->code; }
-    public function setCode(string $v): void { $this->code = $v; }
+    public function getCode(): string { return \$this->code; }
+    public function setCode(string \$v): void { \$this->code = \$v; }
 
-    public function getName(): ?string { return $this->name; }
-    public function setName(?string $v): void { $this->name = $v; }
+    public function getName(): ?string { return \$this->name; }
+    public function setName(?string \$v): void { \$this->name = \$v; }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterCollection.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/CostCenter/CostCenterCollection.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\CostCenter;
@@ -466,11 +487,11 @@ namespace ${nsBase}\Core\Content\CostCenter;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
- * @method void add(CostCenterEntity $entity)
- * @method void set(string $key, CostCenterEntity $entity)
+ * @method void add(CostCenterEntity \$entity)
+ * @method void set(string \$key, CostCenterEntity \$entity)
  * @method CostCenterEntity[] getIterator()
  * @method CostCenterEntity[] getElements()
- * @method CostCenterEntity|null get(string $key)
+ * @method CostCenterEntity|null get(string \$key)
  * @method CostCenterEntity|null first()
  * @method CostCenterEntity|null last()
  */
@@ -481,12 +502,12 @@ class CostCenterCollection extends EntityCollection
         return CostCenterEntity::class;
     }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Migration/Migration1700000000CreateCostCenter.php" <<'INNER_EOF'
+  cat > "${pluginDir}/src/Migration/Migration1700000000CreateCostCenter.php" <<EOF
 <?php declare(strict_types=1);
 
-namespace Acme\Csp\CostCenters\Migration;
+namespace ${nsBase}\Migration;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Migration\MigrationStep;
@@ -495,34 +516,40 @@ class Migration1700000000CreateCostCenter extends MigrationStep
 {
     public function getCreationTimestamp(): int { return 1700000000; }
 
-    public function update(Connection $connection): void
+    public function update(Connection \$connection): void
     {
-        $connection->executeStatement('
-            CREATE TABLE IF NOT EXISTS `acme_cost_center` (
-                `id` BINARY(16) NOT NULL,
-                `code` VARCHAR(64) NOT NULL,
-                `name` VARCHAR(255) NULL,
-                `created_at` DATETIME(3) NOT NULL,
-                `updated_at` DATETIME(3) NULL,
-                PRIMARY KEY (`id`),
-                UNIQUE KEY `uniq_cost_center_code` (`code`)
+        \$connection->executeStatement('
+            CREATE TABLE IF NOT EXISTS \`${tableName}\` (
+                \`id\` BINARY(16) NOT NULL,
+                \`code\` VARCHAR(64) NOT NULL,
+                \`name\` VARCHAR(255) NULL,
+                \`created_at\` DATETIME(3) NOT NULL,
+                \`updated_at\` DATETIME(3) NULL,
+                PRIMARY KEY (\`id\`),
+                UNIQUE KEY \`uniq_cost_center_code\` (\`code\`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ');
     }
 
-    public function updateDestructive(Connection $connection): void {}
+    public function updateDestructive(Connection \$connection): void {}
 }
-INNER_EOF
+EOF
 }
+
 
 add_approvalstep_entity () {
   local pluginDir="plugins/ApprovalWorkflow"
-  local nsBase="${VENDOR}\${SUITE}\ApprovalWorkflow"
-  local nsEsc
-  nsEsc="$(to_ns_path "${nsBase}")"
+  local nsBase="${VENDOR}\\${SUITE}\\ApprovalWorkflow"
+
+  local tablePrefix="${VENDOR_SLUG}"
+  if [[ -n "${SUITE_SLUG}" ]]; then
+    tablePrefix="${tablePrefix}_${SUITE_SLUG}"
+  fi
+
+  local tableName="${tablePrefix}_approval_step"
 
   mkdir -p "${pluginDir}/src/Core/Content/ApprovalStep"
-  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepDefinition.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepDefinition.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\ApprovalStep;
@@ -537,7 +564,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\Field\IntField;
 
 final class ApprovalStepDefinition extends EntityDefinition
 {
-    public const ENTITY_NAME = 'acme_approval_step';
+    public const ENTITY_NAME = '${tableName}';
 
     public function getEntityName(): string { return self::ENTITY_NAME; }
     public function getEntityClass(): string { return ApprovalStepEntity::class; }
@@ -552,9 +579,9 @@ final class ApprovalStepDefinition extends EntityDefinition
         ]);
     }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepEntity.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepEntity.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\ApprovalStep;
@@ -566,18 +593,18 @@ class ApprovalStepEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected string $name;
-    protected int $sequence;
+    protected string \$name;
+    protected int \$sequence;
 
-    public function getName(): string { return $this->name; }
-    public function setName(string $v): void { $this->name = $v; }
+    public function getName(): string { return \$this->name; }
+    public function setName(string \$v): void { \$this->name = \$v; }
 
-    public function getSequence(): int { return $this->sequence; }
-    public function setSequence(int $v): void { $this->sequence = $v; }
+    public function getSequence(): int { return \$this->sequence; }
+    public function setSequence(int \$v): void { \$this->sequence = \$v; }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepCollection.php" <<INNER_EOF
+  cat > "${pluginDir}/src/Core/Content/ApprovalStep/ApprovalStepCollection.php" <<EOF
 <?php declare(strict_types=1);
 
 namespace ${nsBase}\Core\Content\ApprovalStep;
@@ -585,11 +612,11 @@ namespace ${nsBase}\Core\Content\ApprovalStep;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
- * @method void add(ApprovalStepEntity $entity)
- * @method void set(string $key, ApprovalStepEntity $entity)
+ * @method void add(ApprovalStepEntity \$entity)
+ * @method void set(string \$key, ApprovalStepEntity \$entity)
  * @method ApprovalStepEntity[] getIterator()
  * @method ApprovalStepEntity[] getElements()
- * @method ApprovalStepEntity|null get(string $key)
+ * @method ApprovalStepEntity|null get(string \$key)
  * @method ApprovalStepEntity|null first()
  * @method ApprovalStepEntity|null last()
  */
@@ -600,12 +627,12 @@ class ApprovalStepCollection extends EntityCollection
         return ApprovalStepEntity::class;
     }
 }
-INNER_EOF
+EOF
 
-  cat > "${pluginDir}/src/Migration/Migration1700000001CreateApprovalStep.php" <<'INNER_EOF'
+  cat > "${pluginDir}/src/Migration/Migration1700000001CreateApprovalStep.php" <<EOF
 <?php declare(strict_types=1);
 
-namespace Acme\Csp\ApprovalWorkflow\Migration;
+namespace ${nsBase}\Migration;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Migration\MigrationStep;
@@ -614,24 +641,25 @@ class Migration1700000001CreateApprovalStep extends MigrationStep
 {
     public function getCreationTimestamp(): int { return 1700000001; }
 
-    public function update(Connection $connection): void
+    public function update(Connection \$connection): void
     {
-        $connection->executeStatement('
-            CREATE TABLE IF NOT EXISTS `acme_approval_step` (
-                `id` BINARY(16) NOT NULL,
-                `name` VARCHAR(128) NOT NULL,
-                `sequence` INT NOT NULL,
-                `created_at` DATETIME(3) NOT NULL,
-                `updated_at` DATETIME(3) NULL,
-                PRIMARY KEY (`id`)
+        \$connection->executeStatement('
+            CREATE TABLE IF NOT EXISTS \`${tableName}\` (
+                \`id\` BINARY(16) NOT NULL,
+                \`name\` VARCHAR(128) NOT NULL,
+                \`sequence\` INT NOT NULL,
+                \`created_at\` DATETIME(3) NOT NULL,
+                \`updated_at\` DATETIME(3) NULL,
+                PRIMARY KEY (\`id\`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ');
     }
 
-    public function updateDestructive(Connection $connection): void {}
+    public function updateDestructive(Connection \$connection): void {}
 }
-INNER_EOF
+EOF
 }
+
 
 for m in "${MODULES[@]}"; do
   scaffold_plugin "$m"
