@@ -1,29 +1,25 @@
-# Cost Centers (Kontierung & Budgetkontrolle)
+# Kostenstellen & Budgets – Steuerung & Compliance
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+Zuordnung von Bestellungen zu **Kostenstellen** (Pflicht) mit **Budgetprüfung** und Reporting; ERP-Abgleich von Kostenstellen/Budgets. [10]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
-
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung
+- **Datenmodell:** Entity Kostenstelle (Mandant/Org, Verantwortliche, Budgetzyklen); Relation zu User/Organisation.  
+- **Checkout:** Pflichtauswahl; Validierung gegen Restbudget; Verhalten bei Überschreitung (Block/Warnung → Approval).  
+- **Buchung:** Budgetabzug bei Freigabe; Rückgabe bei Storno; Periodenwechsel.  
+- **ERP-Sync:** Import Stammdaten/Budgets; Export Order-Kennzeichen.  
+- **UI/Reporting:** Verbrauch je Periode/Kostenstelle; Exporte.
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Import/Mapping + Admin-UI  
+- [x] Pflichtauswahl & Validierung  
+- [x] Abzugslogik & Storno-Gutschrift  
+- [x] Reports/Exporte  
+- [x] ERP-Roundtrip getestet
+
+## Abhängigkeiten/Überschneidungen
+- **Approval:** Überschreitung → Freigabestufe.  
+- **Rollen:** Wer darf Budgets pflegen/sehen?
+
+## Quellen
+[10]

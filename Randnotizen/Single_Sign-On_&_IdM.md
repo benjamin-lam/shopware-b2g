@@ -1,29 +1,25 @@
-# SSO & IDM (SAML/OIDC/LDAP, Rollen-Mapping)
+# Single Sign-On & Identity-Management (SAML 2.0 / OpenID Connect)
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Ziel
+Zentraler Login über den behördlichen **IdP** (z. B. Azure AD, Keycloak), **JIT-Provisioning** und **Attribute-Mapping** auf Organisation/Rollen; sichere Tokenprüfung; Deprovisioning-Pfad. [2]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+## Anforderungen
+- **SP/OIDC-Client:** Redirect-Flows, Signatur/`aud`/`exp`-Prüfungen; Nonce/Replay-Schutz.  
+- **Attribute-Mapping:** Gruppen/Rollen/Kostenstelle → Shop-Benutzer & Orga; Priorität IdP vs. lokal.  
+- **JIT-Provisioning/Deprovisioning:** Nutzer anlegen/deaktivieren über IdP-Signale; Session-Invalidation.  
+- **MFA im IdP:** Shop vertraut IdP-Assurance; No-Bypass.  
+- **Doku & Onboarding:** IdP-Team erhält Attributliste, Beispiele (SAML Assertion/ID-Token).
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
+## Checkliste (aus Recherche)
+- [x] Keine offenen Registrierungen (optional)  
+- [x] IdP-Zwang & Token-Prüfung (Signatur/Gültigkeit)  
+- [x] Gruppen/Rollen-Mapping geklärt  
+- [x] Deaktivierung wirkt (Login blockiert, Session invalidiert)  
+- [x] Nutzerkommunikation/Umstellung dokumentiert [8]
 
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
+## Abhängigkeiten/Überschneidungen
+- **Rollen & Rechte:** Mapping → Berechtigungen.  
+- **Audit-Logging:** Login/Logout/Attribute protokollieren.
 
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
-
-## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+## Quellen
+[2][8]

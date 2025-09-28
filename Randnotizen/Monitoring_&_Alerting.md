@@ -1,29 +1,29 @@
-# Monitoring & Observability (Uptime/APM/Logs)
+# Monitoring & Alerting – Verfügbarkeit, Sicherheit, Nachweise
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Ziele
+Transparenz über Verfügbarkeit/Leistung, **Schnittstellenintegrität** und **Sicherheitsereignisse**; revisionsfähige Berichte; 24/7-Alarmierung mit Eskalation. [9][13]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+## Mindestumfang
+- **Basis-KPIs:** Uptime, Latenz, Fehlerquoten, Ressourcen (CPU/RAM/Disk), Queue-Füllstände.  
+- **Schnittstellen:** ERP-Sync-Aktualität, Punchout-Endpoints, E-Rechnungsversand; Heartbeats. [9][13][16]  
+- **Security-Signale:** Fehl-/Massen-Logins, 5xx-Spikes, ungewöhnliche Orderprofile → Alarm/SIEM. [4][12]  
+- **Berichte:** Monatsreport (SLAs, Incidents, Trends); Audit-Export.
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Betrieb
+- **Alarmwege:** E-Mail/SMS/Pager; Bereitschaftskette; Probealarme. [9]  
+- **Datenschutz:** PII-arme Logs, IP-Policies; Aufbewahrung begrenzen.  
+- **IR-Kopplung:** Automatic Ticket/Incident; Runbooks je Alarm.
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Dashboards/Alarme eingerichtet  
+- [x] Schnittstellen-Synthetics & Thresholds  
+- [x] SIEM-Regeln für Security-Events  
+- [x] Reports/Export für Revision  
+- [x] Probealarme erfolgreich
+
+## Abhängigkeiten/Überschneidungen
+- **Audit-Logging:** Ereignisquelle/Correlation.  
+- **ERP/Punchout:** Synthetische Checks/Partner-Sichtbarkeit.
+
+## Quellen
+[4][9][12][13][16]

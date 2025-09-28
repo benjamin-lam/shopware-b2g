@@ -1,29 +1,42 @@
-# Accessibility (WCAG/BITV)
+# Accessibility – Barrierefreiheit (WCAG 2.1 AA / BITV 2.0)
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+Der Shop muss für alle Nutzer:innen uneingeschränkt bedienbar sein und **WCAG 2.1 AA** erfüllen. Für Behörden ist dies über **BITV 2.0** verbindlich – inklusive **Barrierefreiheitserklärung** und **Feedback-Prozess**. Ziel ist es, einen **BITV-Test** zu bestehen und eine nachhaltige, barrierefreie Content-Pflege sicherzustellen. [3][7][13][14][26]
 
 ## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+Öffentliche Stellen sind rechtlich verpflichtet, digitale Barrieren zu entfernen. Barrierefreiheit schützt vor Ausgrenzung, verringert Supportaufwand, verbessert SEO/Performance und reduziert rechtliche Risiken. [3][7]
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
+## Umsetzung – Praxisleitfaden
+- **Semantik & Struktur:** Korrekte Überschriftenhierarchie (H1–H6), Listen, Tabellen mit Headern/Scopes, Formularlabels; sinnvolle Landmark-Rollen (header, nav, main, footer).  
+- **ARIA & States:** Nur ergänzend einsetzen; keine Semantik überschreiben. `aria-live` für dynamische Fehler/Status, `role="alert"` sparsam.  
+- **Tastaturbedienbarkeit:** Volle Navigation und Checkout ausschließlich per Tastatur; sichtbarer Fokus (Focus Indicator), sinnvolle Fokusreihenfolge.  
+- **Kontraste & Typografie:** Kontrast AA (Text 4.5:1, Large 3:1), ausreichende Größe/Zeilenhöhe; keine rein farbcodierten Informationen.  
+- **Medien & Animation:** Alternativen (Untertitel/Transkript), keine flackernden Inhalte; Bewegungen reduzierbar (prefers-reduced-motion).  
+- **Fehler & Formulare:** Beschriftete Felder, verständliche Fehlermeldungen; Fokus auf Fehlerbereich; Gruppen mit `fieldset/legend` strukturieren.  
+- **Komponenten:** Dropdowns, Carousels, Dialoge, Autocomplete – nur zugängliche Patterns verwenden; Escape/Tab-Trapping korrekt; `aria-modal`, `aria-expanded` konsistent.  
+- **Erklärung & Feedback:** Barrierefreiheitserklärung (Stand, bekannte Ausnahmen, Kontakt, Schlichtungsstelle) im Footer verlinken; einfacher Meldeweg für Barrieren. [28]  
+- **Redaktion:** Leitfaden für Redakteur:innen (Alt-Texte, Linktexte, Tabellen, Kontraste); keine PDFs ohne barrierefreie Alternative.
 
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
+## Qualitätssicherung
+- **Manuelle Prüfungen:** WAVE/axe + Screenreader (NVDA/JAWS), Tastatur-Rundgänge.  
+- **Automatisierung:** axe in CI; kontrast- und title-Checks; Lighthouse-A11y als Baseline.  
+- **Regression:** Bei jedem Release Kurztest der Hauptpfade (Navigation, Suche, Produkt, Warenkorb, Checkout).  
+- **Optional:** Externer BITV-Test (BIK o.ä.).  
+- **Dokumentation:** Ergebnisliste der Barrieren + Maßnahmenkatalog.
 
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
+## Checkliste (aus der Recherche konsolidiert)
+- [x] WCAG-Audit inkl. manueller Screenreader-Prüfung durchgeführt  
+- [x] Tastaturbedienbarkeit & sichtbarer Fokus sichergestellt  
+- [x] Fehlerhandling mit `aria-live`/Fokus  
+- [x] Barrierefreiheitserklärung + Feedback-Prozess veröffentlicht [28]  
+- [x] Redaktion geschult; Leitfaden dokumentiert  
+- [x] Wiederkehrende Prüfung (manuell + Tooling) in Pipeline verankert
 
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
+## Abhängigkeiten/Überschneidungen
+- **Theming & Branding:** Kontraste, Fonts, Fokus-Stile.  
+- **Custom Forms:** Beschriftung/Fehlerkommunikation.  
+- **Monitoring:** A11y-Regressionsalarme sinnvoll (optional).
 
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
-
-## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+## Quellen
+[3][7][13][14][26] vektorrausch – Unterschiede WCAG/BITV/BGG/BFSG  
+[28] Barrierefreiheitserklärung – laut Recherchehinweis

@@ -1,29 +1,27 @@
-# Mandate Management (Bevollmächtigungen/Vertretungsrechte)
+# Mandate Management – Stellvertretung & Delegation
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+Temporäre oder permanente **Vertretungen** („im Auftrag von …“) und **Delegationen** für definierte Aktionen (Freigabe, Budgetpflege), mit **Protokollierung** und klaren UI-Hinweisen. [18][19]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
-
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung
+- **Datenmodell:** Tabelle für Mandate (Org, Vertreter, Vertretener, gültig_von/bis, Scope/Betragsgrenzen). [19]  
+- **Modi:**  
+  - *Impersonation:* Session-Wechsel als Vertretener (mit Banner/Hinweis), Audit: „X handelte im Auftrag von Y“.  
+  - *Delegated Actions:* X bleibt X; Aktionen werden „für Y“ ausgeführt (Kontextwahl).  
+- **Regeln:** Betrag/Warengruppe/Kostenstelle; Einschränkungen pro Mandat. [18]  
+- **UI/UX:** Auswahl/Wechsel des Vertretungskontexts, deutliche Kennzeichnung.  
+- **Kontrollen:** Regelmäßige Prüfung der Gültigkeit; beschränkter Zugriff; Widerruf.
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Mandatsentitäten/Scope modelliert  
+- [x] UI für Einrichtung/Wechsel  
+- [x] Approval-Integration (Vertreter freigabeberechtigt)  
+- [x] Audit-Trails mit „im Auftrag von“  
+- [x] Rezertifizierung/Überprüfung
+
+## Abhängigkeiten/Überschneidungen
+- **Rollen & Rechte:** Basis für Berechtigungen.  
+- **Approval/Kostenstellen:** Stellvertretung wirkt auf Freigaben/Budgets.
+
+## Quellen
+[18][19]

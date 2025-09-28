@@ -1,29 +1,26 @@
-# Disaster Recovery & Backup (RPO/RTO)
+# Disaster Recovery & Backup – RPO/RTO, Offsite & Tests
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Ziel
+Wiederherstellung des Betriebs innerhalb definierter **RTO** bei maximalem **RPO**-Datenverlust. Verschlüsselte, verifizierte **Offsite-Backups**; regelmäßige **Restore-Tests**; dokumentiertes **DR-Playbook**. [10][11][17]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
-
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung
+- **Strategie:** DB/Files/Config getrennt, versioniert; Offsite (zweites RZ/Cloud DE); Schlüsselschutz.  
+- **Automatisierung:** Geplante Jobs, Integritätsprüfungen, Monitoring/Alarmierung.  
+- **Tests:** Regelmäßige Restores in Staging mit Zeitmessung; Ergebnisprotokolle für Revision.  
+- **Archivierung:** Jahresstände/GoBD-konform; DSGVO vs. Aufbewahrung abwägen.  
+- **Organisation:** Verantwortlichkeiten, Kontaktliste, Kommunikationsplan.
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] RPO/RTO definiert & mit Auftraggeber abgestimmt  
+- [x] Backup-Jobs stabil + überwacht  
+- [x] Restore-Test erfolgreich dokumentiert  
+- [x] Notfallhandbuch/Runbooks gepflegt  
+- [x] Zugriff/Schlüsselmanagement geprüft  
+- [x] Langzeit-Archivierung geregelt
+
+## Abhängigkeiten/Überschneidungen
+- **Monitoring:** Backup-Fehler/Alter der Sicherungen alarmieren.  
+- **Audit:** Nachweise zu Tests/Aufbewahrung.
+
+## Quellen
+[10][11][17]

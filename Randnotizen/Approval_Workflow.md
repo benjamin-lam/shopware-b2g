@@ -1,29 +1,37 @@
-# Approval Workflow (Genehmigungen & Eskalationen)
+# Approval Workflow – Mehrstufige Genehmigungen & Eskalation
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+Bestellungen müssen vor finalem Absenden **regelbasiert** genehmigt werden (mehrstufig, AND/OR-Kombinationen, Stellvertretungen). Fristen/Eskalationen, Kommentare/Begründungen, Historie und Revision sind Pflicht. [12]
 
 ## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+Behörden arbeiten formalisiert und fristgebunden. Jede Zeichnung muss **nachvollziehbar** und **berechtigt** sein (Vier-Augen-Prinzip, Funktionstrennung). [12]
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
+## Anforderungen & Besonderheiten (B2G)
+- **Stufen & Bedingungen:** Betragsschwellen, Warengruppen, Kostenstellen, Mandant/Organisation, Haushaltsstellen.  
+- **AND/OR-Kombinationen:** z. B. (Abteilungsleitung ODER Stellvertretung) UND (Haushaltsstelle). [12]  
+- **Eskalation:** Fristablauf → nächsthöhere Instanz; Vakanzen abbildbar.  
+- **Versionierung:** Ablehnung → Warenkorbänderung → neue Runde; Historie bleibt erhalten.  
+- **Schnittstelle Vergabe:** Ggf. Übergabe an eVergabe/Fachverfahren nach interner Freigabe.
 
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung – Technische Leitplanken
+- **Regelwerk:** Konfigurierbare Policies (Betrag, Kategorie, Kostenstelle, Rolle).  
+- **Workflow-Engine/Events:** Statuswechsel, Benachrichtigungen (Mail/API), erneute Einreichung.  
+- **UI/UX:** Freigeberübersicht, Kommentare, Stellvertreterauswahl; klare Rückmeldungen im Checkout.  
+- **Audit:** Jede Entscheidung (wer/wann/was/warum) unveränderbar protokollieren (s. Audit_Logging).  
+- **Sicherheit:** Rechteprüfung serverseitig (kein reines Frontend-Gate).
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Regelwerk modelliert (Stufen, Bedingungen, OR/AND)  
+- [x] Eskalationsketten/Fristen definiert  
+- [x] Stellvertretung integriert (s. Mandate_Management)  
+- [x] UI für Genehmiger & Besteller konzipiert  
+- [x] Audit-Trail & Reporting implementiert  
+- [x] E2E-Tests/Betragsschwellen/Edge-Cases
+
+## Abhängigkeiten/Überschneidungen
+- **Rollen & Rechte:** Wer darf freigeben?  
+- **Kostenstellen & Budgets:** Budgetlogik ↔ Freigabe.  
+- **ERP/Schnittstellen:** Nur freigegebene Orders exportieren.
+
+## Quellen
+[12] (Abschnitt „Approval-Workflow“ in der Recherche)

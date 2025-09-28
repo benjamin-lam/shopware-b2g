@@ -1,29 +1,33 @@
-# Roles & Permissions (Rollen, Rechte, Unterkonten)
+# Rollen & Rechte – Governance & Funktionstrennung
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Ziel
+Mehrbenutzer-Organisationen (Behörden) mit **feingranularen Berechtigungen** für Besteller, Freigeber, Controlling/Revision und Admins. [15][16][19][21]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+## B2G-Spezifika
+- **Hierarchien & Limits:** Formale Ebenen, Freigabegrenzen, Querschnittsstellen (IT/Vergabe).  
+- **Mandanten-Trennung:** Keine Überschneidung zwischen Organisationen; Sales-Channel-gebunden.  
+- **Dokumentation:** Rollenvergabe/-änderung nachvollziehbar, Reporting/Rezertifizierung. [4]
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
+## Shopware-Bezug
+- **OOTB Lücke (CE):** Keine Kunden-Unterkonten/RBAC im Frontend; B2B-Suite/Components liefern Basis, **Customizing bleibt nötig**. [15][16][19][21]  
+- **Erweiterungen:** Rollen für Kostenstellen/Approval, SSO-Mapping, Exportrechte.
 
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung
+- **Datenmodell:** Organisation, Orga-User, Rollen, evtl. Gruppen; Mehrrollenfähigkeit; Mandantenschlüssel.  
+- **Policy-Checks:** Serverseitige Gates; Rule-Builder-Integration.  
+- **Admin-UI:** Pflege von Orgs/Benutzer/Rollen; Exporte; Rezertifizierung.  
+- **Audit:** Jede Rollenaktion protokollieren. [4]
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Rollenmodell & Hierarchien definiert  
+- [x] Datenmodell & Migrationen  
+- [x] Admin-UI & Reports  
+- [x] Policy-Enforcement/Tests  
+- [x] SSO-Mapping & Audit
+
+## Abhängigkeiten/Überschneidungen
+- **Approval/Mandate:** Rechte wirken auf Genehmigungen/Vertretungen.  
+- **SSO/IdM:** Attribut-Mapping → Rollen.
+
+## Quellen
+[15][16][19][21][4]
