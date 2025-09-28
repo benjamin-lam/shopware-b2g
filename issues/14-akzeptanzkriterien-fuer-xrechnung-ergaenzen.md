@@ -17,3 +17,5 @@ XRechnungsprozesse benötigen Validierungs-, PEPPOL- und Archivnachweise als Akz
 - todo
 - invoicing
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/XRechnung/xrechnung.md

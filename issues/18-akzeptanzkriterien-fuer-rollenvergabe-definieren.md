@@ -17,3 +17,5 @@ Für Rollen- und Rechteverwaltung fehlen Prüfintervalle und Audit-Belege als Ak
 - todo
 - security
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Rollenvergabe/rollen.md

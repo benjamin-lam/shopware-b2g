@@ -17,3 +17,5 @@ Disaster-Recovery verlangt definierte Kriterien für RPO/RTO-Nachweise und Resto
 - todo
 - disaster-recovery
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/RPO-RTO-Nachweise/dr-tests.md

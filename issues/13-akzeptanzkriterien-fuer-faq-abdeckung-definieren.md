@@ -17,3 +17,5 @@ Für die FAQ fehlen Checklisten-Kriterien welche Themen vollständig beantwortet
 - todo
 - knowledge-base
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/FAQ-Abdeckung/faq.md

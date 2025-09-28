@@ -17,3 +17,5 @@ Für Barrierefreiheitsanforderungen fehlen messbare Akzeptanzkriterien für Nutz
 - todo
 - accessibility
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Barrierefreiheit/barrierefreiheit.md

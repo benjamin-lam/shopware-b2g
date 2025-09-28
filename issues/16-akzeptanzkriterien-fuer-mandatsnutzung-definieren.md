@@ -17,3 +17,5 @@ Mandatsverwaltung benötigt Kriterien zu Audit-Logs und Ablaufbehandlungen von M
 - todo
 - authorization
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Mandatsnutzung/mandate.md

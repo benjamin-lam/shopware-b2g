@@ -17,3 +17,5 @@ Formularübermittlungen brauchen Kriterien zu Validierungsfehlerquoten und erfol
 - todo
 - forms
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Formularuebermittlungen/formulare.md

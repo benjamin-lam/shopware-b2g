@@ -17,3 +17,5 @@ Test- und Abnahmeprozesse benötigen definierte Mindestumfänge und Nachweisform
 - todo
 - testing
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Abnahmen/abnahmen.md

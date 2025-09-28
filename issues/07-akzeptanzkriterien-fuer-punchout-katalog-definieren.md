@@ -17,3 +17,5 @@ Punchout- und Katalogintegrationen benötigen Erfolgsnachweise wie OCI-Rückgabe
 - todo
 - integration
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Punchout-Katalog/punchout.md

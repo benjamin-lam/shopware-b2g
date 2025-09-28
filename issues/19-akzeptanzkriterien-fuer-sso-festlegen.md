@@ -17,3 +17,5 @@ SSO/IdM erfordert Kriterien zu IdP-Failover, Token-Validierung und Deprovisionin
 - todo
 - identity
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/SSO/sso.md

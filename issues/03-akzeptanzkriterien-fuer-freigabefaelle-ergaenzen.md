@@ -17,3 +17,5 @@ Der Approval-Workflow benötigt klare Kriterien wann Freigaben je Order-Level al
 - todo
 - workflow
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Freigabefaelle/freigaben.md

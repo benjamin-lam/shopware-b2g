@@ -17,3 +17,5 @@ Architekturrichtlinien benötigen abgestimmte Akzeptanzkriterien zur technischen
 - todo
 - architecture
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Architektur-Guidelines/architektur.md

@@ -17,3 +17,5 @@ Mandanten-Themes brauchen Kriterien zu Kontrast, Browserkompatibilität und Mand
 - todo
 - ux
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Mandanten-Themes/themes.md

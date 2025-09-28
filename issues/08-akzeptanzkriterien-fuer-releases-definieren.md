@@ -17,3 +17,5 @@ Für das Release-Management fehlen Kriterien wann ein Change als abgenommen gilt
 - todo
 - release-management
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Releases/releases.md

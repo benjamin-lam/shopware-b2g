@@ -17,3 +17,5 @@ FÃ¼r Betriebsprozesse fehlen messbare Kriterien zu Reaktionszeiten und Runbook-Ã
 - todo
 - operations
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Betriebsprozesse/betrieb.md
