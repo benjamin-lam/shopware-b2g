@@ -2,7 +2,15 @@
   "name": "b2g/erp-connector",
   "description": "Skeleton: ERP-Schnittstellen für B2G",
   "type": "shopware-platform-plugin",
-  "autoload": { "psr-4": { "B2G\\ERPConnector\\": "src/" } },
-  "extra": { "shopware-plugin-class": "B2G\\ERPConnector\\B2GERPConnector" },
-  "require": { "php": ">=8.1" }
+  "autoload": {
+    "psr-4": {
+      "B2G\\ERPConnector\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "B2G\\ERPConnector\\B2GERPConnector"
+  },
+  "require": {
+    "php": ">=8.2"
+  }
 }

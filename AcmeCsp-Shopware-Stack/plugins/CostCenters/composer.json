@@ -4,16 +4,16 @@
   "description": "CostCenters plugin scaffold",
   "license": "proprietary",
   "require": {
-    "php": ">=8.1",
-    "shopware/core": "^6.5"
+    "php": ">=8.2",
+    "shopware/core": "^6.6"
   },
   "autoload": {
     "psr-4": {
-      "Acme\\Csp\\CostCenters\": "src/"
+      "Acme\\Csp\\CostCenters\\": "src/"
     }
   },
   "extra": {
-    "shopware-plugin-class": "Acme\\Csp\\CostCenters\CostCenters",
+    "shopware-plugin-class": "Acme\\Csp\\CostCenters\\CostCenters",
     "label": "CostCenters (Scaffold)"
   }
 }

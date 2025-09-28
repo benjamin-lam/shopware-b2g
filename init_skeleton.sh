@@ -267,7 +267,7 @@ final class ${module} extends Plugin
     public function install(InstallContext \$installContext): void
     {
         parent::install(\$installContext);
-        // TODO: migrations, system config, ACL seeds
+        // @todo: migrations, system config, ACL seeds
     }
 }
 INNER_EOF

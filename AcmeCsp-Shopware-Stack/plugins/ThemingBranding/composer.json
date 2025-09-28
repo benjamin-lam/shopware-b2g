@@ -4,16 +4,16 @@
   "description": "ThemingBranding plugin scaffold",
   "license": "proprietary",
   "require": {
-    "php": ">=8.1",
-    "shopware/core": "^6.5"
+    "php": ">=8.2",
+    "shopware/core": "^6.6"
   },
   "autoload": {
     "psr-4": {
-      "Acme\\Csp\\ThemingBranding\": "src/"
+      "Acme\\Csp\\ThemingBranding\\": "src/"
     }
   },
   "extra": {
-    "shopware-plugin-class": "Acme\\Csp\\ThemingBranding\ThemingBranding",
+    "shopware-plugin-class": "Acme\\Csp\\ThemingBranding\\ThemingBranding",
     "label": "ThemingBranding (Scaffold)"
   }
 }
