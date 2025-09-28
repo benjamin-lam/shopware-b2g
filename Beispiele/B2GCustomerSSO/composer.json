@@ -1,0 +1,8 @@
+{
+  "name": "b2g/customer-sso",
+  "description": "Skeleton: SSO (SAML/OIDC) für Kunden",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\CustomerSSO\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\CustomerSSO\\B2GCustomerSSO" },
+  "require": { "php": ">=8.1" }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "b2g/accessibility-toolkit",
+  "description": "Skeleton: A11y-Hilfen für Shopware-Storefront/Module",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "B2G\\AccessibilityToolkit\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "B2G\\AccessibilityToolkit\\B2GAccessibilityToolkit",
+    "label": {
+      "en-GB": "B2G Accessibility Toolkit",
+      "de-DE": "B2G Accessibility Toolkit"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "b2g/mandate-management",
+  "description": "Skeleton: Stellvertretung & Delegation für B2G",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\MandateManagement\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\MandateManagement\\B2GMandateManagement" },
+  "require": { "php": ">=8.1" }
+}
