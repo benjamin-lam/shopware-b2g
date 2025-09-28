@@ -1,0 +1,11 @@
+```
+custom-fields/
+├── README.md
+├── OVERVIEW.md
+├── skeleton.tree
+└── src
+    └── Resources
+        └── config
+            ├── cms.xml
+            └── custom_fields.xml
+```

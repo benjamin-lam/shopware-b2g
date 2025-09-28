@@ -1,0 +1,21 @@
+```
+admin-extension/
+├── README.md
+├── OVERVIEW.md
+├── module.xml
+├── skeleton.tree
+└── src
+    └── Resources
+        └── app
+            └── administration
+                └── src
+                    ├── main.js
+                    └── module
+                        └── acme-demo-module
+                            ├── index.js
+                            ├── page
+                            │   └── acme-demo-list
+                            │       └── index.js
+                            └── snippet
+                                └── de-DE.json
+```

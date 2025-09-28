@@ -1,0 +1,8 @@
+{% block cms_block_acme_simple_text %}
+    <div class="cms-block-acme-simple-text">
+        {# Projektteams ergänzen hier dynamische Ausgaben, z. B. Snippets oder Custom Fields. #}
+        <p class="cms-block-acme-simple-text__content">
+            {{ element.config.content.value|default('[[Platzhaltertext]]') }}
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+```
+state-machine/
+├── README.md
+├── OVERVIEW.md
+├── skeleton.tree
+└── src
+    ├── Resources
+    │   ├── config
+    │   │   └── services.xml
+    │   └── state-machine
+    │       └── acme_order_state.xml
+    └── Subscriber
+        └── StateTransitionSubscriber.php
+```

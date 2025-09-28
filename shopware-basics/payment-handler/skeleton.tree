@@ -1,0 +1,13 @@
+```
+payment-handler/
+├── README.md
+├── OVERVIEW.md
+├── skeleton.tree
+└── src
+    ├── Payment
+    │   └── AcmePaymentHandler.php
+    └── Resources
+        └── config
+            ├── payment-method.xml
+            └── services.xml
+```
