@@ -1,0 +1,8 @@
+{
+  "name": "b2g/punchout-connector",
+  "description": "Skeleton: OCI/cXML Punchout Connector",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\PunchoutConnector\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\PunchoutConnector\\B2GPunchoutConnector" },
+  "require": { "php": ">=8.1" }
+}

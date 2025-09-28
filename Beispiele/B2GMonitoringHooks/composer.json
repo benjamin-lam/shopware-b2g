@@ -1,0 +1,8 @@
+{
+  "name": "b2g/monitoring-hooks",
+  "description": "Skeleton: Health/Metrics Hooks",
+  "type": "shopware-platform-plugin",
+  "autoload": { "psr-4": { "B2G\\MonitoringHooks\\": "src/" } },
+  "extra": { "shopware-plugin-class": "B2G\\MonitoringHooks\\B2GMonitoringHooks" },
+  "require": { "php": ">=8.1" }
+}
