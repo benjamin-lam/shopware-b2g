@@ -1,29 +1,30 @@
-# Audit Logging (Revisionssicherheit)
+# Audit-Logging – Revisionssichere Nachvollziehbarkeit
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Ziele
+**Rechts- und revisionssichere** Protokollierung aller sicherheits- und geschäftsrelevanten Ereignisse: Logins/SSO, Rollenänderungen, Organisationszuordnungen, Stammdatenänderungen, Bestellungen, Freigaben, Schnittstellenaktionen. [4][12]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+## Mindestanforderungen
+- **Integrität:** WORM-Storage/Export, Hash-Ketten oder signierte Log-Bündel; Schutz vor Manipulation. [4]  
+- **Vollständigkeit:** Wer/Wann/Was/Woher (IP/Client); Korrelation mit Order/Approval-IDs.  
+- **Aufbewahrung:** Nach GoBD/behördlichen Vorgaben (z. B. 10 Jahre für Finanzunterlagen).  
+- **Datenschutz:** Datenminimierung, PII-Maskierung in Fehlerlogs; Löschkonzept vs. Archivpflicht.
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Betrieb & Sicherheit
+- **Detektion:** Anschluss an SIEM/SOC (Brute-Force, Privilege Escalation, API-Anomalien). [4]  
+- **Berichte:** Rollenberichte, Freigabe-Historien, Zugriffsauswertungen.  
+- **Rezertifizierung:** Regelmäßige Review-Prozesse für Rechte (jährlich/halbjährlich). [4]
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Ereigniskatalog + Felder definiert  
+- [x] Fälschungsschutz/Unveränderbarkeit implementiert  
+- [x] Aufbewahrungsfristen & Exportfunktion  
+- [x] SIEM-Anbindung + Alarmregeln  
+- [x] Rechte-Rezertifizierung dokumentiert
+
+## Abhängigkeiten/Überschneidungen
+- **Rollen & Rechte:** Protokolliert Zuweisungen/Änderungen.  
+- **SSO/IdM:** Protokolle für An-/Abmeldung, Attribut-Mapping.  
+- **Approval/ERP:** Bestell- und Genehmigungsereignisse verknüpfen.
+
+## Quellen
+[4][12]

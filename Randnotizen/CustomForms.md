@@ -1,29 +1,28 @@
-# Custom Forms (Form-Builder, Validierung, Übergaben)
+# Custom Forms – Dynamische Formulare & Fachverfahren
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+Individuelle Formulare im Frontend (Anträge, Bedarfsanforderungen, Zusatzdaten) mit Validierung, Ablage/Export und **Anbindung an Fachverfahren** (DMS, eVergabe, Tickets, interne APIs). [16]
 
 ## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+Das **OZG** treibt die Digitalisierung von Verwaltungsleistungen. Formulare vermeiden Medienbrüche, sichern Datenqualität und beschleunigen Prozesse – intern wie extern. [16]
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
-
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
-
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
-
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
+## Umsetzung
+- **Form-Builder/Schema-Driven:** Felder, Regeln, Pflichtangaben, Anhänge; Barrierefreiheit beachten (Labels, Fehler, `aria-live`).  
+- **Validierung:** Client- und serverseitig; klare Fehlerrückmeldungen; Datentypen/Masken.  
+- **Datenwege:** JSON/XML-Exports, direkte Schnittstellen (REST/SOAP), sichere Übertragung (VPN/HTTPS).  
+- **Datenschutz:** Zweckbindung, Speicherdauer, Lösch-/Anonymisierung nach Übergabe; Verschlüsselung.  
+- **Betrieb:** Versionsstände, Änderungsprotokolle, Redaktionszugriffe.
 
 ## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+- [x] Formularmodelle & Pflichtfelder definiert  
+- [x] A11y-gerechte UI & Fehlermeldungen  
+- [x] Export/Integration in Fachverfahren  
+- [x] Datenschutz-Hinweise pro Formular  
+- [x] Monitoring der Übermittlungen + Retry
+
+## Abhängigkeiten/Überschneidungen
+- **Accessibility:** A11y-Regeln aus Accessibility_Barrierefreiheit.  
+- **ERP/eVergabe/DMS:** Zielsystem-Schnittstellen & Mappings.
+
+## Quellen
+[16]

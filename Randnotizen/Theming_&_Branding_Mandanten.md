@@ -1,29 +1,31 @@
-# Theming & Branding (CI, Multi-Branding)
+# Theming & Branding – Mandantenspezifisches Design
 
-## Kundenanforderung (einfach)
-<Kurz in Klartext: Was will der Kunde in diesem Bereich erreichen?>
+## Kundenanforderung
+CI-konforme Darstellung (Logo, Farben, Schriften, ggf. Hoheitszeichen) je **Organisation/Mandant**; **Sales-Channel**-basiert; **AA-Kontraste** und konsistente Komponenten – auch in eigenen Modulen (Approval/Forms). [7][10][13]
 
-## Warum ist das so?
-<Kontext: fachlich/organisatorisch/rechtlich – worin liegt der Bedarf?>
+## Besonderheiten
+- **Designvorgaben öffentlicher Hand:** Stilhandbücher/Hausschriften, nüchterne Anmutung; A11y ist verbindlich. [7]  
+- **Hoheitszeichen:** Sorgfältige Nutzung (Stadt-/Landeswappen) nach Vorgaben.  
+- **Multi-Mandant:** Verwechslungsfreiheit (Logo/Domain/Theme-Varianten).
 
-## Besonderheiten im B2G
-<Was macht es in Behördenprojekten strenger/anders?>
+## Umsetzung
+- **Sales Channels:** Domain/Pfad → Theme-Config; Experience Pages/Impressum je Mandant.  
+- **E-Mails/PDFs:** Mandantenlogo/-name in Vorlagen; Testmails je Channel. [11]  
+- **Performance & Kompatibilität:** Schlanke Assets; gängige Behörden-Browser (Edge/Firefox ESR/IE-Mode) testen. [11]  
+- **Konsistenz:** Eigene Module per SCSS-Variablen ins Theme integrieren; keine Stil-Brüche. [11]  
+- **Admin-Guides:** Wechsel von Logos/Farben; Onboarding neuer Mandanten.
 
-## Was fehlt in Shopware OOTB?
-<Kernlücken gegenüber dem Standard; warum braucht es ein Modul/Plugin?>
+## Checkliste (aus Recherche)
+- [x] Channels/Theme-Configs je Organisation  
+- [x] Mandantenspezifische Inhalte (CMS/Impressum)  
+- [x] E-Mails/PDFs angepasst & getestet [11]  
+- [x] Performance/Kompatibilität geprüft  
+- [x] Konsistenz in Custom-Modulen  
+- [x] Admin-Doku/Schulung
 
-## Technische Umsetzung (Allgemein)
-<Architektur-Muster, Datenmodell, Prozesse, Zustände, Benachrichtigungen, Validierungen>
+## Abhängigkeiten/Überschneidungen
+- **Accessibility:** Kontraste/Fokus/Typografie.  
+- **Punchout:** Sichtbare Mandantenidentität im Flow.
 
-## Spezifische Anforderungen an Shopware
-<SW6: DAL, Events, Admin/Storefront-Erweiterungen, Rule/Flow-Builder, System-Config, Migrations …>
-
-## Abhängigkeiten / Überschneidungen
-<Bezug zu anderen Modulen: wer triggert wen, in welcher Reihenfolge?>
-
-## Checkliste
-- [ ] Anforderungen fachlich dokumentiert
-- [ ] Datenmodell & Migrations definiert
-- [ ] Admin-UI/Storefront-UX skizziert
-- [ ] Events/Integrationen (in/out) festgelegt
-- [ ] Tests/Monitoring/Audit berücksichtigt
+## Quellen
+[7][10][11][13]
