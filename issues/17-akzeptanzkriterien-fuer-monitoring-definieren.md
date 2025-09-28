@@ -17,3 +17,5 @@ Monitoring und Alerting brauchen messbare SLA-Nachweise und Reaktionszeiten als 
 - todo
 - monitoring
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Monitoring-Alerting/monitoring.md

@@ -17,3 +17,5 @@ Budgetprüfungen brauchen definierte Fehlerfälle, Schwellenwerte und Reporting-
 - todo
 - finance
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Budgetpruefungen/budget.md

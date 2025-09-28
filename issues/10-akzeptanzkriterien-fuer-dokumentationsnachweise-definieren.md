@@ -17,3 +17,5 @@ Für Dokumentations- und Archivierungsnachweise fehlen Kriterien zu Vollständig
 - todo
 - documentation
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Dokumentationsnachweise/dokumentation.md

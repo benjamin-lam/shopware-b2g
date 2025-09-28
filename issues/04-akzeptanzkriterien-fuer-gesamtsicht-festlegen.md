@@ -17,3 +17,5 @@ Für die Gesamtsicht der B2G-Besonderheiten fehlen definierte Minimalnachweise a
 - todo
 - governance
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Gesamtsicht/gesamtsicht.md

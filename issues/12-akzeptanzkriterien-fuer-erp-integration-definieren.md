@@ -17,3 +17,5 @@ ERP-Schnittstellen benötigen definierte Erfolgsquoten und Latenzgrenzen als Akz
 - todo
 - integration
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/ERP-Integration/erp.md

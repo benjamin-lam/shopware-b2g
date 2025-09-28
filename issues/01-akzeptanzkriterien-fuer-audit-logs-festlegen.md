@@ -17,3 +17,5 @@ Audit-Logs benötigen messbare Abnahmekriterien für Revisionssicherheit und Exp
 - todo
 - compliance
 - product-owner
+
+- [x] Akzeptanzkriterium definiert in ./Akzeptanzkriterien/Audit-Logs/audit-logs.md
