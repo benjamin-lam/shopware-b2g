@@ -17,9 +17,11 @@
 ## Checkliste
 - [x] Ereigniskatalog + Felder definiert  
 - [x] Fälschungsschutz/Unveränderbarkeit implementiert  
-- [x] Aufbewahrungsfristen & Exportfunktion  
-- [x] SIEM-Anbindung + Alarmregeln  
+- [x] Aufbewahrungsfristen & Exportfunktion
+- [x] SIEM-Anbindung + Alarmregeln
 - [x] Rechte-Rezertifizierung dokumentiert
+
+> @todo (PO): Akzeptanzkriterien für Audit-Logs (Wann gilt Eintrag als revisionssicher, wie wird Export geprüft?) formulieren.
 
 ## Abhängigkeiten/Überschneidungen
 - **Rollen & Rechte:** Protokolliert Zuweisungen/Änderungen.  

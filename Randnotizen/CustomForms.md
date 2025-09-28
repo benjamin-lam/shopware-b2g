@@ -17,12 +17,14 @@ Das **OZG** treibt die Digitalisierung von Verwaltungsleistungen. Formulare verm
 - [x] Formularmodelle & Pflichtfelder definiert  
 - [x] A11y-gerechte UI & Fehlermeldungen  
 - [x] Export/Integration in Fachverfahren  
-- [x] Datenschutz-Hinweise pro Formular  
+- [x] Datenschutz-Hinweise pro Formular
 - [x] Monitoring der Übermittlungen + Retry
 
 ## Abhängigkeiten/Überschneidungen
-- **Accessibility:** A11y-Regeln aus Accessibility_Barrierefreiheit.  
+- **Accessibility:** A11y-Regeln aus Accessibility_Barrierefreiheit.
 - **ERP/eVergabe/DMS:** Zielsystem-Schnittstellen & Mappings.
+
+> @todo (PO): Akzeptanzkriterien für Formularübermittlungen (z. B. Validierungsfehlerquote, erfolgreiche Übergabe ans Fachverfahren) ausformulieren.
 
 ## Quellen
 [16]

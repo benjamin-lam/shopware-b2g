@@ -13,13 +13,15 @@ ERP als **Single Source of Truth** für Artikel/Preise/Bestände; Shop übergibt
 ## Checkliste
 - [x] Formate/Protokolle/Frequenz abgestimmt  
 - [x] Mappingdoku + Testimporte erfolgreich  
-- [x] Order-Export + ERP-Auftragsnummer Rückfluss [24]  
-- [x] Monitoring (Throughput/Fehler) + Alarme  
+- [x] Order-Export + ERP-Auftragsnummer Rückfluss [24]
+- [x] Monitoring (Throughput/Fehler) + Alarme
 - [x] Betriebshandbuch/On-Call-Kontakt
 
 ## Abhängigkeiten/Überschneidungen
-- **Approval/Kostenstellen:** Export-Gate erst nach Freigabe/Budget.  
+- **Approval/Kostenstellen:** Export-Gate erst nach Freigabe/Budget.
 - **Invoicing:** Rechnungsdaten/Leitweg-ID an ERP/Versandsystem.
+
+> @todo (PO): Akzeptanzkriterien für ERP-Integrationen (z. B. Erfolgsquote, Latenz) definieren.
 
 ## Quellen
 [18][19][24]

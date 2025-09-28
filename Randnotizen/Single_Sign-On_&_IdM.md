@@ -12,14 +12,16 @@ Zentraler Login über den behördlichen **IdP** (z. B. Azure AD, Keycloak), **JI
 
 ## Checkliste (aus Recherche)
 - [x] Keine offenen Registrierungen (optional)  
-- [x] IdP-Zwang & Token-Prüfung (Signatur/Gültigkeit)  
-- [x] Gruppen/Rollen-Mapping geklärt  
-- [x] Deaktivierung wirkt (Login blockiert, Session invalidiert)  
+- [x] IdP-Zwang & Token-Prüfung (Signatur/Gültigkeit)
+- [x] Gruppen/Rollen-Mapping geklärt
+- [x] Deaktivierung wirkt (Login blockiert, Session invalidiert)
 - [x] Nutzerkommunikation/Umstellung dokumentiert [8]
 
 ## Abhängigkeiten/Überschneidungen
-- **Rollen & Rechte:** Mapping → Berechtigungen.  
+- **Rollen & Rechte:** Mapping → Berechtigungen.
 - **Audit-Logging:** Login/Logout/Attribute protokollieren.
+
+> @todo (PO): Akzeptanzkriterien für SSO (z. B. IdP-Failover, Token-Validierung, Deprovisioning-Laufzeit) festlegen.
 
 ## Quellen
 [2][8]

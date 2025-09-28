@@ -24,3 +24,6 @@ Beschaffungs-/Service-Portale für Behörden müssen **rechtskonform, nachvollzi
 
 ## Checkliste (kurz)
 - Rollen/Workflows geklärt? • Mandantenmodell? • E-Rechnung? • SSO/IDM? • WCAG? • Audit/Monitoring/Backup? • Externe Standards & Schnittstellen?
+
+> @todo (PO): Akzeptanzkriterien für die Gesamtsicht (Welche Minimalnachweise müssen erfüllt sein?) definieren.
+> @todo (PO): Abhängigkeiten zu Detail-Randnotizen explizit verlinken (z. B. Approval ↔ Kostenstellen ↔ ERP).

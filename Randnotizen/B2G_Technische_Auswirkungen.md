@@ -18,3 +18,7 @@
 
 ## Shopware-Implikationen
 - OOTB reicht selten: **Plugins/Custom-Module** für Rollen, Approval, CostCenter, E-Invoice, SSO, Audit, etc.
+
+> @todo (PO): Checkliste ableiten (Welche technischen Leitplanken müssen erfüllt sein?).
+> @todo (PO): Abhängigkeiten zu Spezialthemen (z. B. Monitoring, Backup, Security) strukturieren.
+> @todo (PO): Akzeptanzkriterien für Architektur-Guidelines formulieren.

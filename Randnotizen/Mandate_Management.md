@@ -15,13 +15,15 @@ Temporäre oder permanente **Vertretungen** („im Auftrag von …“) und **Del
 ## Checkliste
 - [x] Mandatsentitäten/Scope modelliert  
 - [x] UI für Einrichtung/Wechsel  
-- [x] Approval-Integration (Vertreter freigabeberechtigt)  
-- [x] Audit-Trails mit „im Auftrag von“  
+- [x] Approval-Integration (Vertreter freigabeberechtigt)
+- [x] Audit-Trails mit „im Auftrag von“
 - [x] Rezertifizierung/Überprüfung
 
 ## Abhängigkeiten/Überschneidungen
-- **Rollen & Rechte:** Basis für Berechtigungen.  
+- **Rollen & Rechte:** Basis für Berechtigungen.
 - **Approval/Kostenstellen:** Stellvertretung wirkt auf Freigaben/Budgets.
+
+> @todo (PO): Akzeptanzkriterien für Mandatsnutzung (z. B. Nachweis im Audit-Log, Ablauf von Mandaten) festlegen.
 
 ## Quellen
 [18][19]

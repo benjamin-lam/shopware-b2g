@@ -17,13 +17,15 @@ Transparenz über Verfügbarkeit/Leistung, **Schnittstellenintegrität** und **S
 ## Checkliste
 - [x] Dashboards/Alarme eingerichtet  
 - [x] Schnittstellen-Synthetics & Thresholds  
-- [x] SIEM-Regeln für Security-Events  
-- [x] Reports/Export für Revision  
+- [x] SIEM-Regeln für Security-Events
+- [x] Reports/Export für Revision
 - [x] Probealarme erfolgreich
 
 ## Abhängigkeiten/Überschneidungen
-- **Audit-Logging:** Ereignisquelle/Correlation.  
+- **Audit-Logging:** Ereignisquelle/Correlation.
 - **ERP/Punchout:** Synthetische Checks/Partner-Sichtbarkeit.
+
+> @todo (PO): Akzeptanzkriterien für Monitoring (SLA-Nachweise, Alarm-Reaktionszeiten) definieren.
 
 ## Quellen
 [4][9][12][13][16]
