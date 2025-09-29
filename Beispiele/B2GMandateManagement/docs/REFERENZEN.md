@@ -1,1 +1,0 @@
-- Siehe: ../../Randnotizen/Mandate_Management.md

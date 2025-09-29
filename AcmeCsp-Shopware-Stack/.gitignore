@@ -1,8 +1,0 @@
-/vendor/
-/composer.lock
-/.idea/
-/node_modules/
-/var/
-/public/bundles/
-/.ENV
-.DS_Store

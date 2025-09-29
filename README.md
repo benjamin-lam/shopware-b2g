@@ -1,32 +1,19 @@
-# Randnotizen – B2G & Shopware (Nachschlagewerk)
+# Shopware-B2G – Nachschlagewerk
 
-Diese Sammlung bündelt die wichtigsten Problemstellungen und Lösungsansätze im **B2G**-Kontext (Behörden/öffentlicher Sektor) sowie deren **technische Auswirkungen** auf Shopware. Jede Seite ist kurz, prägnant und als Starthilfe für Implementierungen gedacht.
-> **Navigation:** [Index](Randnotizen/Index.md) · [FAQ](Randnotizen/FAQ.md)
+Dieses Repository dokumentiert die Besonderheiten eines B2G-Beschaffungsportals auf Basis von Shopware 6.  Öffentliche Auftraggeber erwarten rechtskonforme, barrierefreie und transparente Einkaufslösungen【39†L1-L3】, daher wird jedes Thema aus fachlicher und technischer Sicht beleuchtet.  Die Dokumente sind in acht Abschnitte gegliedert: **Kundenanforderung**, **Warum ist das so?**, **Anforderungen & Besonderheiten (B2G)**, **Umsetzung – Technische Leitplanken**, **Checkliste**, **Abhängigkeiten/Überschneidungen**, **Akzeptanzkriterien** und **Quellen**.  Ein Glossar definiert Fachbegriffe; das Quellenverzeichnis listet alle Nachweise.  Beispiele demonstrieren, wie man Anforderungen als Shopware-Plugin oder -App umsetzt.
 
-## Allgemeiner Teil
-- [B2G_Besonderheiten](Randnotizen/B2G_Besonderheiten.md) – Rechtliches/organisatorisches Umfeld, typische Prozesse, Pflichten.
-- [B2G_Technische_Auswirkungen](Randnotizen/B2G_Technische_Auswirkungen.md) – Architektur- und Sicherheitsimplikationen, Standards, Muster.
-> @todo (PO): Beispiel-Skeleton für B2G_Besonderheiten anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für B2G_Technische_Auswirkungen anlegen / Scope abstimmen
+| Thema                               | Dokument                                                        | Beispiel                                  |
+|------------------------------------|-----------------------------------------------------------------|-------------------------------------------|
+| Überblick B2G-Anforderungen        | [b2g-requirements/overview.md](docs/b2g-requirements/overview.md) | –                                           |
+| Vergabe & Compliance               | [b2g-requirements/vergabe_compliance.md](docs/b2g-requirements/vergabe_compliance.md) | [approval-workflow](examples/approval-workflow) |
+| Workflows, Rollen & Mandate        | [b2g-requirements/workflows_roles.md](docs/b2g-requirements/workflows_roles.md) | [approval-workflow](examples/approval-workflow) |
+| Budgets & E-Rechnungen             | [b2g-requirements/budgets_invoicing.md](docs/b2g-requirements/budgets_invoicing.md) | [cost-centers](examples/cost-centers)       |
+| Integration & Identität            | [b2g-requirements/integration_identity.md](docs/b2g-requirements/integration_identity.md) | [customer-sso](examples/customer-sso)        |
+| Barrierefreiheit & Multitenancy    | [b2g-requirements/accessibility_multitenancy.md](docs/b2g-requirements/accessibility_multitenancy.md) | –                                           |
+| Betrieb, Monitoring & Governance   | [b2g-requirements/operations_governance.md](docs/b2g-requirements/operations_governance.md) | –                                           |
+| Shopware-Grundlagen                | [shopware-basics/overview.md](docs/shopware-basics/overview.md) | –                                           |
+| Systemarchitektur                  | [architecture/system-architecture.md](docs/architecture/system-architecture.md) | –                                           |
+| Datenmodell                        | [architecture/data-model.md](docs/architecture/data-model.md) | –                                           |
+| Integrationsmuster                 | [architecture/integration-patterns.md](docs/architecture/integration-patterns.md) | –                                           |
 
-## Module (Shopware-spezifische Deep Dives)
-- [Rollen_&_Rechte](Randnotizen/Rollen_&_Rechte.md) – Granulare Rollen & Berechtigungen, Unterkonten.
-- [Mandate_Management](Randnotizen/Mandate_Management.md) – Vertretungsrechte/Bevollmächtigungen (Handeln im Namen der Organisation).
-- [Approval_Workflow](Randnotizen/Approval_Workflow.md) – Mehrstufige Genehmigungen, Eskalation, Budgetgrenzen.
-- [Kostenstellen_&_Budgets](Randnotizen/Kostenstellen_&_Budgets.md) – Kostenstellen, Kontierung, Budgetkontrolle & Reporting.
-- [Invoicing_XRechnung_ZUGFeRD](Randnotizen/Invoicing_XRechnung_ZUGFeRD.md) – E-Rechnung/XRechnung/ZUGFeRD, Pflichtangaben, Validierung.
-- [Broker_Integration_Punchout_&_Katalog](Randnotizen/Broker_Integration_Punchout_&_Katalog.md) – Punchout/OCI/cXML/PEPPOL, Kataloge & Bestellimport.
-- [ERP_Schnittstellen](Randnotizen/ERP_Schnittstellen.md) – Stammdaten/Preise/Orders, Sync-Strategien, Fehlerrobustheit.
-- [Single_Sign-On_&_IdM](Randnotizen/Single_Sign-On_&_IdM.md) – SAML/OIDC/LDAP, föderierte Logins, Rollen-Mapping.
-- [Theming_&_Branding_Mandanten](Randnotizen/Theming_&_Branding_Mandanten.md) – Corporate Design/Behörden-CI, Multi-Branding je Mandant.
-- [Accessibility_Barrierefreiheit](Randnotizen/Accessibility_Barrierefreiheit.md) – WCAG/BITV, Tests, Do/Don’t bei Themes & Plugins.
-- [CustomForms](Randnotizen/CustomForms.md) – Form-Builder, Validierung, Persistenz, Übergabe an Fachverfahren.
-- [Audit_Logging](Randnotizen/Audit_Logging.md) – Revisionssichere Protokolle, Scope, Aufbewahrung.
-- [Monitoring_&_Alerting](Randnotizen/Monitoring_&_Alerting.md) – Uptime/APM/Logs/Security-Signale, Alarmierung, Berichte.
-- [DrBackup_&_Wiederherstellung](Randnotizen/DrBackup_&_Wiederherstellung.md) – Backup/Restore, RPO/RTO, DR-Playbooks, Verschlüsselung.
-> @todo (PO): Beispiel-Skeleton für Betrieb & Governance anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Change & Release anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Dokumentation & Archivierung anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Testing & Abnahme anlegen / Scope abstimmen
-
-> Hinweis: Inhalte sind **kundengenerisch** formuliert (keine Namen). Jede Seite enthält: *Kundenanforderung*, *Warum (Kontext)*, *B2G-Besonderheiten*, *Was fehlt OOTB*, *Technische Umsetzung (Allgemein)*, *Spezifisch für Shopware*, *Abhängigkeiten/Überschneidungen*, *Checkliste*.
+Das [Glossar](docs/glossar.md) erklärt verwendete Abkürzungen und Fachbegriffe.  Alle externen Nachweise sind im [Quellenverzeichnis](docs/quellen.md) aufgeführt.  Die Beispiel-Ordner zeigen, wie man Anforderungen als Plugin oder App umsetzen kann.  Bei umfangreichen Themen sind `@todo`-Vermerke eingefügt, um offene Punkte zu markieren.  Änderungen und neue Dokumente werden im Backlog festgehalten.
