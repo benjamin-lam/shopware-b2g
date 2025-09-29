@@ -1,17 +1,50 @@
 # Integration in Verwaltungs-IT & Identitätsmanagement
 
-Ein B2G-Shop ist kein isoliertes System.  Er muss sich in die bestehende IT-Landschaft der Behörden einfügen und Nutzer authentifizieren, ohne eine separate Benutzerverwaltung zu betreiben:
+## Kundenanforderung
 
-- **ERP-Integration:** Artikelstammdaten, Preise und Lagerbestände werden regelmäßig aus dem ERP (z. B. SAP) importiert.  Bestellungen werden nach der Freigabe zurück ans ERP übertragen.  Die Schnittstellen sollten asynchron (Queues) gestaltet sein, um Ausfälle abzufangen und Wiederholungen zu ermöglichen.  Punchout-Schnittstellen wie OCI und cXML erlauben es, den Shop als externen Katalog in E-Procurement-Plattformen zu integrieren.
-- **Single Sign-On (SSO) & IdM:** Nutzer melden sich über den zentralen Identity Provider der Behörde an (SAML 2.0 oder OpenID Connect).  Beim ersten Login werden Shop-Accounts automatisch provisioniert (Just-in-Time-Provisioning).  Attribute wie Abteilung, Rolle oder Kostenstelle werden vom IdP übernommen und auf Shop-Rollen gemappt.  Entzug von Zugriffsrechten im IdP muss zum Sperren des Shop-Accounts führen.  MFA wird durch den IdP erzwungen.
-- **Weitere Fachverfahren:** Dokumentenmanagement, Vergabeplattformen, Ticketsysteme oder Fachverfahren (z. B. für Genehmigungen) können angebunden werden.  Standardisierte Formate (UBL, CSV) und Events erleichtern den Austausch.
+Der B2G-Shop soll sich nahtlos in bestehende Systeme einfügen: Artikelstammdaten, Preise und Bestellungen werden mit dem ERP synchronisiert; E-Procurement-Plattformen nutzen den Shop via Punchout (OCI/cXML); Mitarbeitende melden sich per Single Sign-On über den zentralen Identity-Provider an【38†L84-L90】.  Weitere Fachverfahren (z. B. Dokumentenmanagement, Vergabeplattform) sollen angebunden werden.
 
-**Umsetzung in Shopware:**
+## Warum ist das so?
 
-Für die ERP-Anbindung kann ein Connector-Service entwickelt werden, der per REST oder Message-Queue Stammdaten synchronisiert und Bestellungen exportiert.  Punchout-Anbindungen erfordern eigene Controller, um OCI-Aufrufe entgegenzunehmen und Warenkörbe als cXML zurückzugeben.  Für SSO gibt es Community-Plugins, die erweitert werden müssen: sie validieren SAML/OIDC-Tokens, legen Accounts an und mappen Attribute.  Events und Webhooks können für externe Fachverfahren genutzt werden.
+Behörden haben etablierte ERP- und E-Procurement-Systeme.  Ein isolierter Shop würde Doppelerfassung und Medienbrüche verursachen.  Punchout ermöglicht es, den Shop als externen Katalog zu nutzen; nach der Warenkorberstellung werden die Daten an das E-Procurement-System zurückgegeben【38†L84-L90】.  Single Sign-On via SAML/OIDC ist erforderlich, damit Mitarbeitende ihre dienstlichen Accounts verwenden können und zentral gesteuerte Sicherheitsrichtlinien (MFA, Passwortwechsel) gelten.
 
-**Offene Fragen / Akzeptanzkriterien:**
+## Anforderungen & Besonderheiten (B2G)
 
-- Wie wird die Datenqualität bei der ERP-Synchronisation sichergestellt?
-- Welche IdP-Attribute müssen gemappt werden und wie erfolgt die Rezertifizierung der Nutzer?
-- Welche Standards (PEPPOL/OCI/cXML) müssen zwingend unterstützt werden?
+1. **ERP-Integration:** Regelmäßiger Import von Artikeln, Preisen und Beständen sowie Export von freigegebenen Bestellungen.  Asynchrone Verarbeitung mit Queues und Retry-Mechanismen【38†L84-L90】.
+2. **Punchout (OCI/cXML):** Unterstützung für OCI-Punchout (SAP) und cXML-Punchout (Ariba, Coupa).  Session-Management, Warenkorbübernahme und Rückgabe im Standardformat.
+3. **Single Sign-On (SAML/OIDC):** Authentifizierung über einen zentralen Identity-Provider.  Attribut-Mapping (Abteilung, Rolle, Kostenstelle) und Just-in-Time-Provisioning von Benutzerkonten【38†L84-L90】.
+4. **Fachverfahren & Schnittstellen:** Anbindung an Dokumentenmanagement, Vergabeplattformen oder andere Fachverfahren mit standardisierten Formaten (UBL, CSV).  Ereignisse (OrderPlaced, InvoiceGenerated) als Webhooks oder Events bereitstellen.
+5. **Sicherheit & Compliance:** Verschlüsselte Übertragung, Idempotenz bei der Synchronisation, Monitoring der Schnittstellen und Authentifizierung von API-Clients.
+
+## Umsetzung – Technische Leitplanken
+
+- **Integration Layer:** Entwickeln Sie einen Microservice oder ein Plugin, das Daten asynchron synchronisiert.  Nutzen Sie Message-Queues (z. B. RabbitMQ) für Import/Export und implementieren Sie Retry-Logik.  Datenänderungen in Shopware lösen Events aus, die an den Integration Layer gesendet werden.
+- **Punchout Controller:** Implementieren Sie Controller für OCI und cXML: Der Controller nimmt Login-Parameter entgegen, erstellt eine Session, erlaubt dem Benutzer einen Warenkorb aufzubauen und sendet diesen als cXML/OCI an das E-Procurement-System zurück.
+- **SSO Provider:** Verwenden Sie eine bestehende SAML/OIDC-Bibliothek oder erweitern Sie ein verfügbares Shopware-Plugin.  Beim ersten Login werden Benutzerkonten und Organisationen automatisch angelegt (Just-in-Time).  Attribute aus dem Token (Rollen, OrgUnit, CostsCenter) werden auf Shop-Rollen und Organisationen gemappt.  Deprovisioning erfolgt beim Logout oder wenn der IdP den Benutzer löscht.
+- **Fachverfahren Adapter:** Nutzen Sie die Shopware-API, um Fachverfahren anzubinden.  Implementieren Sie Endpunkte für Datenabfragen (z. B. GET /api/b2g/orders?status=pendingApproval) und nutzen Sie Event-Publishing für Echtzeit-Updates.
+- **Security & Monitoring:** Jede Schnittstelle muss TLS nutzen, API-Keys oder OAuth2 für Authentifizierung verwenden und Rate-Limits definieren.  Ein Monitoring überwacht den Datenfluss (Erfolgsquoten, Latenzen) und sendet Alerts bei Fehlern.【38†L84-L90】
+
+## Checkliste
+
+- [ ] ERP-Import/Export implementiert mit Queue und Retry.
+- [ ] OCI und cXML Punchout vollständig unterstützt (Session-Management, Warenkorbübernahme, Rückgabe).
+- [ ] SAML/OIDC-Login funktioniert; Benutzer- und Organisationszuordnung wird automatisch erstellt.
+- [ ] Fachverfahren können per API integriert werden (DMS, Vergabeplattform).
+- [ ] Alle Schnittstellen verwenden TLS und auth.  Monitoring protokolliert Fehler und Latenzen.
+- [ ] Offene Punkte (z. B. spezifikationskonforme Feldbelegungen) als `@todo` notiert.
+
+## Abhängigkeiten/Überschneidungen
+
+Dieses Modul beeinflusst **Roles & Workflows** (Attribute aus dem IdP werden auf Rollen abgebildet), **Budgets & Rechnungen** (ERP-Integration, Rechnungsdaten), **Vergabe & Compliance** (Ausschreibungsplattformen) und **Betrieb & Governance** (Monitoring der Schnittstellen).  Die Sicherheitseinstellungen müssen mit dem Infrastrukturteam abgestimmt werden.
+
+## Akzeptanzkriterien
+
+1. Synchronisation mit dem ERP funktioniert fehlerfrei; Daten sind konsistent.
+2. Punchout-Prozesse werden mit mindestens einem E-Procurement-System erfolgreich durchgeführt.
+3. Single Sign-On mit Attribut-Mapping funktioniert und ist abgesichert (MFA, Token-Validierung).
+4. Schnittstellen erfüllen Sicherheitsstandards (TLS, Auth, Rate-Limits) und werden überwacht.
+5. Dokumentierte Adapter für mindestens ein Fachverfahren sind vorhanden.
+
+## Quellen
+
+Siehe Quellen [8], [12] im Quellenverzeichnis.

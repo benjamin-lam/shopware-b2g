@@ -1,7 +1,10 @@
 # Backlog
 
-In diesem Ordner wird das Projekt-Backlog gepflegt.  Alle offenen Aufgaben, Akzeptanzkriterien und `@todo`-Vermerke aus der Dokumentation und dem Code sollen in der Datei `tasks.csv` gesammelt werden.  Dadurch behält das Team den Überblick über den Bearbeitungsstand und die Prioritäten.  Die CSV sollte folgende Spalten besitzen:
+Dieses Verzeichnis enthält den Projekt-Backlog.  Alle offenen Aufgaben, To-Dos aus den Dokumenten (`@todo`) und Akzeptanzkriterien sollen in `tasks.csv` aufgenommen werden.  Die CSV-Datei erleichtert die Priorisierung und Bearbeitung.  Verwende die folgenden Spalten:
 
-`Quelle` • `Beschreibung` • `Kategorie` • `Rolle` • `Priorität` • `Status`
-
-Beim Erstellen neuer Dokumente oder Code-Module bitte darauf achten, offene Punkte direkt hier zu erfassen.
+`Quelle` – Pfad der Datei oder Modul, aus dem die Aufgabe stammt  
+`Beschreibung` – Kurzbeschreibung der Aufgabe  
+`Kategorie` – Bereich (z. B. Genehmigung, Budget, Integration)  
+`Rolle` – Verantwortliche Rolle (z. B. Entwickler, PO)  
+`Priorität` – Wichtigkeit (hoch, mittel, niedrig)  
+`Status` – z. B. offen, in Arbeit, erledigt

@@ -1,15 +1,19 @@
-# Shopware-B2G – Clean-Up Branch
+# Shopware-B2G – Nachschlagewerk
 
-Dieses Repository bereitet die Entwicklung eines Cloud Service Portals (CSP) für die Deutsche Verwaltungscloud (DVC) vor.  Es richtet sich an Entwicklerinnen und Entwickler, die mit PHP 8, Symfony und Shopware 6 arbeiten und ein rechtskonformes, barrierefreies B2G-Beschaffungsportal aufbauen möchten.  Die Dokumentation orientiert sich an den Anforderungen des öffentlichen Sektors: Vergabe- und Compliance-Regeln, mehrstufige Genehmigungsprozesse, Mandantenfähigkeit, elektronische Rechnungsstellung, Integration in Verwaltungs-IT, Single Sign-On, Barrierefreiheit sowie Betrieb und Monitoring[1].
+Dieses Repository dokumentiert die Besonderheiten eines B2G-Beschaffungsportals auf Basis von Shopware 6.  Öffentliche Auftraggeber erwarten rechtskonforme, barrierefreie und transparente Einkaufslösungen【39†L1-L3】, daher wird jedes Thema aus fachlicher und technischer Sicht beleuchtet.  Die Dokumente sind in acht Abschnitte gegliedert: **Kundenanforderung**, **Warum ist das so?**, **Anforderungen & Besonderheiten (B2G)**, **Umsetzung – Technische Leitplanken**, **Checkliste**, **Abhängigkeiten/Überschneidungen**, **Akzeptanzkriterien** und **Quellen**.  Ein Glossar definiert Fachbegriffe; das Quellenverzeichnis listet alle Nachweise.  Beispiele demonstrieren, wie man Anforderungen als Shopware-Plugin oder -App umsetzt.
 
-Die Ordner sind wie folgt strukturiert:
+| Thema                               | Dokument                                                        | Beispiel                                  |
+|------------------------------------|-----------------------------------------------------------------|-------------------------------------------|
+| Überblick B2G-Anforderungen        | [b2g-requirements/overview.md](docs/b2g-requirements/overview.md) | –                                           |
+| Vergabe & Compliance               | [b2g-requirements/vergabe_compliance.md](docs/b2g-requirements/vergabe_compliance.md) | [approval-workflow](examples/approval-workflow) |
+| Workflows, Rollen & Mandate        | [b2g-requirements/workflows_roles.md](docs/b2g-requirements/workflows_roles.md) | [approval-workflow](examples/approval-workflow) |
+| Budgets & E-Rechnungen             | [b2g-requirements/budgets_invoicing.md](docs/b2g-requirements/budgets_invoicing.md) | [cost-centers](examples/cost-centers)       |
+| Integration & Identität            | [b2g-requirements/integration_identity.md](docs/b2g-requirements/integration_identity.md) | [customer-sso](examples/customer-sso)        |
+| Barrierefreiheit & Multitenancy    | [b2g-requirements/accessibility_multitenancy.md](docs/b2g-requirements/accessibility_multitenancy.md) | –                                           |
+| Betrieb, Monitoring & Governance   | [b2g-requirements/operations_governance.md](docs/b2g-requirements/operations_governance.md) | –                                           |
+| Shopware-Grundlagen                | [shopware-basics/overview.md](docs/shopware-basics/overview.md) | –                                           |
+| Systemarchitektur                  | [architecture/system-architecture.md](docs/architecture/system-architecture.md) | –                                           |
+| Datenmodell                        | [architecture/data-model.md](docs/architecture/data-model.md) | –                                           |
+| Integrationsmuster                 | [architecture/integration-patterns.md](docs/architecture/integration-patterns.md) | –                                           |
 
-| Ordner                         | Inhalt                                                                            |
-|-------------------------------|-----------------------------------------------------------------------------------|
-| `docs/b2g-requirements`       | Fachliche Anforderungen eines B2G-Shops (Vergabe, Workflows, Budgets usw.)        |
-| `docs/shopware-basics`        | Übersicht der Shopware-6-Grundlagen und der B2B-Components                        |
-| `docs/architecture`           | Technische Architektur, Datenmodelle und Integrationsmuster                      |
-| `examples`                    | Platzhalter für Beispiel-Plugins (z. B. Approval-Workflow, Cost Centers)         |
-| `backlog`                     | Zentrale Aufgabenliste und Projekt-Backlog                                       |
-
-Die detaillierten Anforderungen und die technische Planung findest du in den Unterordnern.  Die Beispiel-Plugins werden in `examples` abgelegt, sobald die fachlichen Konzepte ausformuliert sind.
+Das [Glossar](docs/glossar.md) erklärt verwendete Abkürzungen und Fachbegriffe.  Alle externen Nachweise sind im [Quellenverzeichnis](docs/quellen.md) aufgeführt.  Die Beispiel-Ordner zeigen, wie man Anforderungen als Plugin oder App umsetzen kann.  Bei umfangreichen Themen sind `@todo`-Vermerke eingefügt, um offene Punkte zu markieren.  Änderungen und neue Dokumente werden im Backlog festgehalten.

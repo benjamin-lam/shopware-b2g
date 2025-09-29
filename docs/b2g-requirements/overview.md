@@ -1,21 +1,50 @@
 # Überblick über B2G-Anforderungen
 
-Dieser Überblick fasst die wesentlichen Anforderungen zusammen, die bei der Entwicklung eines öffentlichen Beschaffungsportals beachtet werden müssen.  Detaillierte Erläuterungen findest du in den jeweils verlinkten Dokumenten.
+## Kundenanforderung
 
-1. **Vergabe und Compliance** – Die Plattform muss die formalen Vergabe- und Haushaltsregeln einhalten, sämtliche Bestellvorgänge revisionssicher dokumentieren und den Kontrollinstanzen (z. B. Rechnungshof) transparent zugänglich machen[2].
-2. **Workflows und Rollen** – Öffentliche Einrichtungen arbeiten mit mehrstufigen Genehmigungsprozessen, hierarchischen Organisationsstrukturen und granularen Rollenmodellen.  Das Vier-Augen-Prinzip und Vertretungsregelungen müssen abbildbar sein.
-3. **Budgets und Rechnungsstellung** – Bestellungen sind Kostenstellen zuzuordnen, gegen Budgets zu prüfen und elektronische Rechnungen (XRechnung, ZUGFeRD) müssen erzeugt werden.
-4. **Integration und Identitätsmanagement** – Der Shop wird in bestehende Verwaltungs-IT eingebettet: ERP-Systeme, Punchout-Kataloge, E-Procurement-Lösungen sowie Single Sign-On via SAML/OpenID Connect müssen integriert werden.
-5. **Barrierefreiheit und Multitenancy** – Als Angebot einer Behörde ist Barrierefreiheit nach WCAG 2.1 AA verpflichtend.  Gleichzeitig muss die Plattform mandantenfähig sein, sodass mehrere Behörden getrennt auf demselben System arbeiten können.
-6. **Betrieb und Governance** – Der Betrieb unterliegt strengen Auflagen: Monitoring, Audit-Logging, Backup/Recovery, Change- und Release-Management sowie Reporting sind zwingend erforderlich.
+Behörden, Ministerien und kommunale Einrichtungen erwarten von einem B2G-Shop eine Lösung, die sie sicher und komfortabel bei der Beschaffung unterstützt.  Wichtige Merkmale sind Rechtskonformität, Barrierefreiheit, Transparenz, Mandantenfähigkeit und Nachweispflicht【39†L1-L3】.  Der Shop muss komplexe Genehmigungsprozesse, Budgetprüfungen, elektronische Rechnungsstellung und Anbindung an bestehende Systeme abbilden.
 
-Die folgenden Unterdokumente erläutern jedes Themenfeld ausführlich und zeigen mögliche Umsetzungsmöglichkeiten mit Shopware 6.
+## Warum ist das so?
 
-| Thema                         | Dokument                                          |
-|------------------------------|---------------------------------------------------|
-| Vergabe & Compliance         | `vergabe_compliance.md`                           |
-| Workflows, Rollen & Mandate  | `workflows_roles.md`                              |
-| Budgets & E-Invoicing        | `budgets_invoicing.md`                            |
-| Integration & Identity       | `integration_identity.md`                         |
-| Barrierefreiheit & Mandanten | `accessibility_multitenancy.md`                   |
-| Betrieb & Governance         | `operations_governance.md`                        |
+Die Beschaffung mit öffentlichen Mitteln unterliegt strengen Vorschriften: Vergaberecht, Haushaltsrecht, Datenschutz und IT-Sicherheit definieren klare Rahmenbedingungen[1].  Jede Bestellung muss rechtlich zulässig sein, Dokumentations- und Archivierungspflichten erfüllen und einer Prüfung durch Rechnungshöfe standhalten.  Barrierefreiheit ist gesetzlich vorgeschrieben (WCAG 2.1 AA, BITV 2.0)【39†L38-L45】, damit auch Menschen mit Einschränkungen den Dienst nutzen können.  Zudem sind Behörden föderal organisiert; eine Plattform muss mehrere Mandanten isoliert bedienen【38†L104-L112】.  Schließlich verlangt die NIS2-Richtlinie strenge Sicherheitsstandards und Nachweispflichten【39†L29-L38】.
+
+## Anforderungen & Besonderheiten (B2G)
+
+1. **Vergabe & Compliance:** Formale Ausschreibungen, Schwellenwerte, Vergabevermerke und Archivierungspflichten[1].
+2. **Workflows & Rollen:** Vier-Augen-Prinzip, mehrstufige Genehmigungen, feingranulares Rollen- und Rechtekonzept[4][2].
+3. **Budgets & Rechnungen:** Zuordnung zu Kostenstellen, Budgetprüfung und XRechnung/ZUGFeRD【38†L66-L75】【38†L76-L83】.
+4. **Integration & Identität:** Anbindung an ERP/E-Procurement (Punchout, cXML/OCI) und Identity-Provider (SAML/OIDC)【38†L84-L90】.
+5. **Barrierefreiheit & Multitenancy:** WCAG 2.1 AA konformes Frontend, separate Sales-Channels pro Behörde und Mandantentrennung【38†L104-L112】.
+6. **Betrieb & Governance:** Monitoring, Audit-Trails, Backups und Change-Management auf hohem Sicherheitsniveau【38†L112-L120】.
+
+## Umsetzung – Technische Leitplanken
+
+Das System basiert auf Shopware 6 mit der B2B-Suite.  B2G-Spezifika werden über eigene Plugins oder Apps umgesetzt (siehe Beispiel-Ordner).  Kernpunkte:
+
+- **Custom Entities:** Erweiterungen des Datenmodells (Organisation, Kostenstelle, Approval-Request) via Shopware DAL.  Migrationsskripte erstellen die Tabellen.
+- **Event-Driven Workflows:** Nutzung von Events (z. B. nach Bestellabschluss) und Flow Builder zur Orchestrierung von Genehmigungen und Budgetprüfungen.
+- **Integration Layer:** REST-/Queue-basierte Adapter zum ERP, cXML/OCI-Controller für Punchout, SAML/OIDC-Service für SSO.  Fehler sollten gepuffert und idempotent verarbeitet werden.
+- **Frontend & Admin:** Anpassungen an Theme und Admin-Module zur Darstellung von Genehmigungen, Budgets und Mandaten.  Barrierefreie Komponenten, ARIA-Labels und kontrastreiche Themes sind Pflicht.
+- **Security & Compliance:** Logging, MFA, Verschlüsselung, strenge CSP-Header, Penetrationstests.  Audit-Trails müssen unveränderbar archiviert werden【39†L29-L38】.
+
+## Checkliste
+
+- [ ] Anforderungskatalog vollständig dokumentiert und Rechtsgrundlagen (Vergaberecht, DSGVO, BITV) berücksichtigt.
+- [ ] Datenmodell mit Organisationen, Kostenstellen, Freigaben und Rechnungen konzipiert.
+- [ ] Genehmigungsprozess mit Eskalationen und Vertretungen implementiert.
+- [ ] SSO und ERP-Schnittstellen integriert (SAML/OIDC, Punchout, cXML/OCI).
+- [ ] Frontend barrierefrei (WCAG 2.1 AA) und multitenantfähig gestaltet.
+- [ ] Monitoring, Logging, Backup und Change-Management eingerichtet.
+- [ ] Offenpunkte als `@todo` markiert.
+
+## Abhängigkeiten/Überschneidungen
+
+Dieses Dokument ist ein Einstieg in alle folgenden Themen.  Vergabe & Compliance, Workflows & Rollen, Budgets, Integration, Barrierefreiheit und Betrieb haben starke Abhängigkeiten voneinander.  Zum Beispiel beeinflusst die Rechtevergabe die Genehmigungsregeln; Budgets sind für Freigaben relevant; die Integration muss SSO-Informationen in Rollen umwandeln; Barrierefreiheit gilt für alle UI-Module.
+
+## Akzeptanzkriterien
+
+Die Übersicht gilt als vollständig, wenn alle genannten Anforderungen identifiziert sind, Verweise auf vertiefende Dokumente vorhanden sind und eine Checkliste für den Projektstart existiert.  Alle Kernpunkte sollten mit einer Quelle belegt sein.
+
+## Quellen
+
+Siehe Quellen [1]–[11] im Quellenverzeichnis.
