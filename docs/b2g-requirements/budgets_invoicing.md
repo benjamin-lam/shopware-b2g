@@ -52,6 +52,7 @@ Die Budgetprüfung beeinflusst den Genehmigungsworkflow (siehe **Workflows & Rol
 - Welche Felder müssen in der XRechnung enthalten sein und wie wird die Validierung automatisiert?
 - Welche Aufbewahrungspflichten gelten je nach Bundesland?
 
+
 ## Quellen
 
 Siehe Quellen [6], [7], [13] im Quellenverzeichnis.
