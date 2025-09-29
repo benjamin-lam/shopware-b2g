@@ -35,13 +35,19 @@ class ApprovalSubscriber implements EventSubscriberInterface
             return;
         }
 
+        $orderCustomer = $order->getOrderCustomer();
+
+        if ($orderCustomer === null || $orderCustomer->getCustomerId() === null) {
+            return;
+        }
+
         $this->approvalRequestRepository->create([
             [
                 'id' => Uuid::randomHex(),
                 'orderId' => $order->getId(),
                 'status' => 'pending',
-                'requestedById' => $order->getOrderCustomer()?->getCustomerId(),
-                'requestedAt' => (new DateTimeImmutable())->format(DATE_ATOM),
+                'requestedById' => $orderCustomer->getCustomerId(),
+                'requestedAt' => new DateTimeImmutable(),
                 'payload' => [
                     'orderNumber' => $order->getOrderNumber(),
                     'amountTotal' => $order->getAmountTotal(),
