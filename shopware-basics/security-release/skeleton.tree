@@ -1,7 +1,0 @@
-```
-security-release/
-├── README.md
-├── OVERVIEW.md
-├── ADR-0001-release-strategy.md
-└── skeleton.tree
-```

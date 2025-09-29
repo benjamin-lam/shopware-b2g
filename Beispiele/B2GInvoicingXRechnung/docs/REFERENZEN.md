@@ -1,1 +1,0 @@
-- Siehe: ../../Randnotizen/Invoicing_XRechnung_ZUGFeRD.md
