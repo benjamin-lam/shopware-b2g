@@ -1,32 +1,15 @@
-# Randnotizen – B2G & Shopware (Nachschlagewerk)
+# Shopware-B2G – Clean-Up Branch
 
-Diese Sammlung bündelt die wichtigsten Problemstellungen und Lösungsansätze im **B2G**-Kontext (Behörden/öffentlicher Sektor) sowie deren **technische Auswirkungen** auf Shopware. Jede Seite ist kurz, prägnant und als Starthilfe für Implementierungen gedacht.
-> **Navigation:** [Index](Randnotizen/Index.md) · [FAQ](Randnotizen/FAQ.md)
+Dieses Repository bereitet die Entwicklung eines Cloud Service Portals (CSP) für die Deutsche Verwaltungscloud (DVC) vor.  Es richtet sich an Entwicklerinnen und Entwickler, die mit PHP 8, Symfony und Shopware 6 arbeiten und ein rechtskonformes, barrierefreies B2G-Beschaffungsportal aufbauen möchten.  Die Dokumentation orientiert sich an den Anforderungen des öffentlichen Sektors: Vergabe- und Compliance-Regeln, mehrstufige Genehmigungsprozesse, Mandantenfähigkeit, elektronische Rechnungsstellung, Integration in Verwaltungs-IT, Single Sign-On, Barrierefreiheit sowie Betrieb und Monitoring[1].
 
-## Allgemeiner Teil
-- [B2G_Besonderheiten](Randnotizen/B2G_Besonderheiten.md) – Rechtliches/organisatorisches Umfeld, typische Prozesse, Pflichten.
-- [B2G_Technische_Auswirkungen](Randnotizen/B2G_Technische_Auswirkungen.md) – Architektur- und Sicherheitsimplikationen, Standards, Muster.
-> @todo (PO): Beispiel-Skeleton für B2G_Besonderheiten anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für B2G_Technische_Auswirkungen anlegen / Scope abstimmen
+Die Ordner sind wie folgt strukturiert:
 
-## Module (Shopware-spezifische Deep Dives)
-- [Rollen_&_Rechte](Randnotizen/Rollen_&_Rechte.md) – Granulare Rollen & Berechtigungen, Unterkonten.
-- [Mandate_Management](Randnotizen/Mandate_Management.md) – Vertretungsrechte/Bevollmächtigungen (Handeln im Namen der Organisation).
-- [Approval_Workflow](Randnotizen/Approval_Workflow.md) – Mehrstufige Genehmigungen, Eskalation, Budgetgrenzen.
-- [Kostenstellen_&_Budgets](Randnotizen/Kostenstellen_&_Budgets.md) – Kostenstellen, Kontierung, Budgetkontrolle & Reporting.
-- [Invoicing_XRechnung_ZUGFeRD](Randnotizen/Invoicing_XRechnung_ZUGFeRD.md) – E-Rechnung/XRechnung/ZUGFeRD, Pflichtangaben, Validierung.
-- [Broker_Integration_Punchout_&_Katalog](Randnotizen/Broker_Integration_Punchout_&_Katalog.md) – Punchout/OCI/cXML/PEPPOL, Kataloge & Bestellimport.
-- [ERP_Schnittstellen](Randnotizen/ERP_Schnittstellen.md) – Stammdaten/Preise/Orders, Sync-Strategien, Fehlerrobustheit.
-- [Single_Sign-On_&_IdM](Randnotizen/Single_Sign-On_&_IdM.md) – SAML/OIDC/LDAP, föderierte Logins, Rollen-Mapping.
-- [Theming_&_Branding_Mandanten](Randnotizen/Theming_&_Branding_Mandanten.md) – Corporate Design/Behörden-CI, Multi-Branding je Mandant.
-- [Accessibility_Barrierefreiheit](Randnotizen/Accessibility_Barrierefreiheit.md) – WCAG/BITV, Tests, Do/Don’t bei Themes & Plugins.
-- [CustomForms](Randnotizen/CustomForms.md) – Form-Builder, Validierung, Persistenz, Übergabe an Fachverfahren.
-- [Audit_Logging](Randnotizen/Audit_Logging.md) – Revisionssichere Protokolle, Scope, Aufbewahrung.
-- [Monitoring_&_Alerting](Randnotizen/Monitoring_&_Alerting.md) – Uptime/APM/Logs/Security-Signale, Alarmierung, Berichte.
-- [DrBackup_&_Wiederherstellung](Randnotizen/DrBackup_&_Wiederherstellung.md) – Backup/Restore, RPO/RTO, DR-Playbooks, Verschlüsselung.
-> @todo (PO): Beispiel-Skeleton für Betrieb & Governance anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Change & Release anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Dokumentation & Archivierung anlegen / Scope abstimmen
-> @todo (PO): Beispiel-Skeleton für Testing & Abnahme anlegen / Scope abstimmen
+| Ordner                         | Inhalt                                                                            |
+|-------------------------------|-----------------------------------------------------------------------------------|
+| `docs/b2g-requirements`       | Fachliche Anforderungen eines B2G-Shops (Vergabe, Workflows, Budgets usw.)        |
+| `docs/shopware-basics`        | Übersicht der Shopware-6-Grundlagen und der B2B-Components                        |
+| `docs/architecture`           | Technische Architektur, Datenmodelle und Integrationsmuster                      |
+| `examples`                    | Platzhalter für Beispiel-Plugins (z. B. Approval-Workflow, Cost Centers)         |
+| `backlog`                     | Zentrale Aufgabenliste und Projekt-Backlog                                       |
 
-> Hinweis: Inhalte sind **kundengenerisch** formuliert (keine Namen). Jede Seite enthält: *Kundenanforderung*, *Warum (Kontext)*, *B2G-Besonderheiten*, *Was fehlt OOTB*, *Technische Umsetzung (Allgemein)*, *Spezifisch für Shopware*, *Abhängigkeiten/Überschneidungen*, *Checkliste*.
+Die detaillierten Anforderungen und die technische Planung findest du in den Unterordnern.  Die Beispiel-Plugins werden in `examples` abgelegt, sobald die fachlichen Konzepte ausformuliert sind.
