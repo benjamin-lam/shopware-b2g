@@ -1,1 +1,0 @@
-- Siehe: ../../Randnotizen/Accessibility_Barrierefreiheit.md

@@ -1,1 +1,0 @@
-- Siehe: ../../Randnotizen/Broker_Integration_Punchout_&_Katalog.md

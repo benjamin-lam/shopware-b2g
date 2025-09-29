@@ -1,6 +1,0 @@
-parameters:
-  level: 6
-  paths:
-    - plugins
-    - shared/src
-  checkGenericClassInNonGenericObjectType: false

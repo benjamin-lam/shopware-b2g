@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/Plugin/Schema/module-1.0.xsd">
-    <label>Acme Demo Module</label>
-    <source>Resources/app/administration/src/main.js</source>
-</module>

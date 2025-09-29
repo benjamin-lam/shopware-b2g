@@ -1,9 +1,0 @@
-{
-    "acme-demo-module": {
-        "general": {
-            "title": "Acme Demo Modul",
-            "description": "Skeleton für ein einfaches Admin-Modul.",
-            "navigation": "Acme Demo"
-        }
-    }
-}
