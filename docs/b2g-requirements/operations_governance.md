@@ -47,6 +47,12 @@ Der Betrieb stützt sich auf alle Module: Audit-Logs aus Vergabe & Genehmigung, 
 4. Audit-Reports werden regelmäßig erzeugt und entsprechen den Anforderungen der Auftraggeber.
 5. Das Betriebshandbuch ist vollständig und aktuell; E2E-Tests decken alle Hauptprozesse ab.
 
+## Offene Fragen
+
+- Welche SLAs (Uptime, Reaktionszeiten) müssen gewährleistet sein?
+- Welche Logging-Formate und Aufbewahrungsfristen gelten für sicherheitsrelevante Ereignisse?
+- Wie werden Change-Requests dokumentiert und von wem freigegeben?
+
 ## Quellen
 
 Siehe Quellen [11], [12] im Quellenverzeichnis.

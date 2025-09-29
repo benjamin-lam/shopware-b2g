@@ -45,6 +45,12 @@ Dieses Modul beeinflusst **Roles & Workflows** (Attribute aus dem IdP werden auf
 4. Schnittstellen erfüllen Sicherheitsstandards (TLS, Auth, Rate-Limits) und werden überwacht.
 5. Dokumentierte Adapter für mindestens ein Fachverfahren sind vorhanden.
 
+## Offene Fragen
+
+- Wie wird die Datenqualität bei der ERP-Synchronisation sichergestellt?
+- Welche IdP-Attribute müssen gemappt werden und wie erfolgt die Rezertifizierung der Nutzer?
+- Welche Standards (PEPPOL/OCI/cXML) müssen zwingend unterstützt werden?
+
 ## Quellen
 
 Siehe Quellen [8], [12] im Quellenverzeichnis.

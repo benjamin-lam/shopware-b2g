@@ -46,6 +46,12 @@ Mandantenfähigkeit beeinflusst **Roles & Workflows** (Rollen pro Mandant), **Bu
 3. Organisationseinheiten pro Mandant funktionieren (z. B. Unterabteilungen mit eigenen Benutzern).
 4. Barrierefreiheitstests sind Teil der CI/CD und werden dokumentiert.
 
+## Offene Fragen
+
+- Wie wird die Barrierefreiheit kontinuierlich getestet und dokumentiert?
+- Wie viele Behörden (Mandanten) müssen gleichzeitig unterstützt werden und wie unterscheiden sich deren Sortimente?
+- Welche Mechanismen stellen sicher, dass keine Daten über Mandantengrenzen hinweg sichtbar werden?
+
 ## Quellen
 
 Siehe Quellen [9], [10] im Quellenverzeichnis.

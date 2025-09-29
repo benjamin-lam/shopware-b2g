@@ -45,6 +45,12 @@ Dieses Dokument ist ein Einstieg in alle folgenden Themen.  Vergabe & Compliance
 
 Die Übersicht gilt als vollständig, wenn alle genannten Anforderungen identifiziert sind, Verweise auf vertiefende Dokumente vorhanden sind und eine Checkliste für den Projektstart existiert.  Alle Kernpunkte sollten mit einer Quelle belegt sein.
 
+## Offene Fragen
+
+- Welche Themenbereiche müssen priorisiert werden, um ein Minimal Viable Product für den Behördeneinkauf bereitzustellen?
+- Welche gesetzlichen Änderungen (z. B. NIS2, Vergaberecht) sind kurzfristig zu erwarten und müssen frühzeitig in den Plan aufgenommen werden?
+- Welche Schnittstellen zu bestehenden Behördenlösungen haben die höchste Integrationstiefe und benötigen vertiefte Workshops?
+
 ## Quellen
 
 Siehe Quellen [1]–[11] im Quellenverzeichnis.

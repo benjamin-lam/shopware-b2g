@@ -47,6 +47,12 @@ Die Vergabe- und Compliance-Funktion ist implementiert, wenn:
 4. Archivierung gemäß GoBD erfolgt und Dateien vor Manipulation geschützt sind.
 5. Alle Sicherheitsanforderungen (DSGVO, BSI-Grundschutz) berücksichtigt sind.
 
+## Offene Fragen
+
+- Welche Arten von Dokumenten müssen explizit archiviert werden (z. B. Vergabevermerk, Leistungsbeschreibung)?
+- Welche Prüfkriterien gelten für die Revisionssicherheit der Audit-Logs?
+- Wie werden personenbezogene Daten im Audit-Log pseudonymisiert?
+
 ## Quellen
 
 Siehe Quellen [1], [2], [12] im Quellenverzeichnis.

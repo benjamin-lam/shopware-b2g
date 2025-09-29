@@ -46,6 +46,13 @@ Die Budgetprüfung beeinflusst den Genehmigungsworkflow (siehe **Workflows & Rol
 3. Budgets und Kostenstellen können im Admin verwaltet, importiert und exportiert werden.
 4. Alle Komponenten sind getestet (Schematron-Validierung, Budgetrückbuchung, Reporting).
 
+## Offene Fragen
+
+- Wie werden Budgets importiert (manuell, Schnittstelle zum ERP)?
+- Welche Felder müssen in der XRechnung enthalten sein und wie wird die Validierung automatisiert?
+- Welche Aufbewahrungspflichten gelten je nach Bundesland?
+
+
 ## Quellen
 
 Siehe Quellen [6], [7], [13] im Quellenverzeichnis.

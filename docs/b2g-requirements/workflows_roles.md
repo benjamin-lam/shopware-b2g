@@ -45,6 +45,12 @@ Dieses Modul ist eng mit **Budgets** (Freigabe abhängig von Beträgen), **Manda
 4. Rollenänderungen werden versioniert und müssen regelmäßig rezertifiziert werden.
 5. Alle Aktionen sind im Audit-Log nachvollziehbar.
 
+## Offene Fragen
+
+- Welche Freigabekriterien (Betrag, Produktkategorie) gelten pro Behörde?
+- Wie viele Eskalationsstufen werden benötigt und wie lange sind die Fristen?
+- Wie lassen sich SSO-Attribute (z. B. IdP-Gruppen) automatisch auf Shop-Rollen mappen?
+
 ## Quellen
 
 Siehe Quellen [3], [4], [5], [12] im Quellenverzeichnis.
