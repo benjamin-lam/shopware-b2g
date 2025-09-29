@@ -8,10 +8,10 @@ Dieses Tutorial beschreibt Schritt für Schritt, wie das Beispiel-Plugin aus die
 - PHP 8.1 oder höher, Composer und die Shopware-CLI (`bin/console`).
 
 ## 1. Repository-Struktur verstehen
-Im Ordner `src/B2gApprovalWorkflow` findest du das Plugin-Gerüst:
+Im Ordner `examples/B2gApprovalWorkflow` findest du das Plugin-Gerüst:
 
 ```
-src/B2gApprovalWorkflow/
+examples/B2gApprovalWorkflow/
 ├── composer.json
 └── src/
     ├── B2gApprovalWorkflow.php
@@ -30,7 +30,7 @@ src/B2gApprovalWorkflow/
 Die Dateien sind so benannt, dass sie Shopware-Konventionen entsprechen. Kommentare und `@todo`-Markierungen zeigen offene Punkte.
 
 ## 2. Plugin in Shopware einbinden
-1. Kopiere den Ordner `src/B2gApprovalWorkflow` in deine Shopware-Installation, z. B. nach `custom/plugins/B2gApprovalWorkflow`.
+1. Kopiere den Ordner `examples/B2gApprovalWorkflow` in deine Shopware-Installation, z. B. nach `custom/plugins/B2gApprovalWorkflow`.
 2. Führe anschließend folgende Befehle aus:
    ```bash
    bin/console plugin:refresh
