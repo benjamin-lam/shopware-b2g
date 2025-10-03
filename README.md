@@ -17,3 +17,13 @@ Dieses Repository dokumentiert die Besonderheiten eines B2G-Beschaffungsportals 
 | Integrationsmuster                 | [architecture/integration-patterns.md](docs/architecture/integration-patterns.md) | –                                           |
 
 Das [Glossar](docs/glossar.md) erklärt verwendete Abkürzungen und Fachbegriffe.  Alle externen Nachweise sind im [Quellenverzeichnis](docs/quellen.md) aufgeführt.  Die Beispiel-Ordner zeigen, wie man Anforderungen als Plugin oder App umsetzen kann.  Bei umfangreichen Themen sind `@todo`-Vermerke eingefügt, um offene Punkte zu markieren.  Änderungen und neue Dokumente werden im Backlog festgehalten.
+
+siehe auch: 
+
+[B2G ist nicht B2B: Was Behörden im E‑Commerce wirklich brauchen](https://altundwillig.de/b2g-ist-nicht-b2b/)
+
+[Shopware 6 für B2G: Was geht OOTB – und was du ernsthaft erweitern musst](https://altundwillig.de/shopware-6-fuer-b2g/)
+
+[B2G mit Shopware: Die ehrliche Checkliste für Behörden-Shops](https://altundwillig.de/b2g-checkliste-shopware/)
+
+[Benjamin Lam LinkedIn - was mit internet](https://de.linkedin.com/in/was-mit-internet)
